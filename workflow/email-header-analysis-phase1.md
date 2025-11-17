@@ -255,7 +255,7 @@ ESP fingerprint
 
 
 
-2. Cisco Talos (threat reputation)
+** 2. Cisco Talos (threat reputation) **
 
 Checks:
 
