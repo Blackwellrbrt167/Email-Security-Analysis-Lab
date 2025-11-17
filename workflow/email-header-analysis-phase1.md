@@ -1,4 +1,4 @@
-mail Header Analysis — Full Workflow Notes (Phase 1 Analysis)
+Mail Header Analysis — Full Workflow Notes (Phase 1 Analysis)
 
 These notes cover the entire initial phase of email analysis, focusing ONLY on:
 
