@@ -24,7 +24,7 @@ Date Received: 11-04-25
 Folder: Inbox
 Initial Suspicion: Low (Benign)
 
-2. Quick Triage (60-Second Surface Check)
+# 2. Quick Triage (60-Second Surface Check)
 
 
 2.1 Sender & Identity Check
