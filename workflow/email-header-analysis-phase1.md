@@ -75,8 +75,7 @@ Purpose matches body content (marketing)
 
 Normal → Benign
 
-
-3. Deep Analysis (Phase 1: Header & Identity)
+# 3. Deep Analysis (Phase 1: Header & Identity)
 
 
 3.1 Header Analysis
@@ -135,7 +134,7 @@ Workflow for confirming the true sending server
 Bottom-most Received = origin
 Top-most Received = mailbox delivery
 
-To confirm the sender:
+## To confirm the sender:
 
 
 (1) Copy hostname from Received header
@@ -239,7 +238,7 @@ This email shows API submission — consistent with marketing automation (TruGre
 
 
 
-C. Server Reputation Analysis (OSINT Stack)
+## C. Server Reputation Analysis (OSINT Stack)
 
 
 1. MXToolbox (initial reputation)
@@ -300,7 +299,7 @@ All indicators consistent with SalesExec → TruGreen marketing pipeline.
 Reputation clean.
 
 
-3.2 Authentication Results (SPF, DKIM, DMARC)
+## 3.2 Authentication Results (SPF, DKIM, DMARC)
 
 Located under:
 
@@ -330,7 +329,7 @@ Pass + weird content → possible compromised sender
 All fail → spoofing attempt
 
 
-3.3 Sender URL Analysis (Header Only)
+## 3.3 Sender URL Analysis (Header Only)
 
 This step focuses ONLY on identifying the sender’s domain identity, not body links.
 
