@@ -15,7 +15,7 @@ Sender URL (header-based)
 **This phase occurs before any analysis of message body links or attachments.
 **
 
-## 1. Basic Metadata
+# 1. Basic Metadata
 
 Example case analyzed:
 
