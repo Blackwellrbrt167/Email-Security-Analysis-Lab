@@ -12,7 +12,8 @@ Server reputation
 
 Sender URL (header-based)
 
-This phase occurs before any analysis of message body links or attachments.
+**This phase occurs before any analysis of message body links or attachments.
+**
 
 1. Basic Metadata
 
@@ -24,6 +25,8 @@ Folder: Inbox
 Initial Suspicion: Low (Benign)
 
 2. Quick Triage (60-Second Surface Check)
+
+
 2.1 Sender & Identity Check
 
 Does the sender match the From name?
@@ -46,6 +49,8 @@ Dummy Proof Checks:
 
 ✔ This sender would contact me (I use TruGreen)
 
+
+
 2.2 Subject Line
 
 No urgency
@@ -53,6 +58,8 @@ No urgency
 No security-themed prompts
 
 Contextually appropriate
+
+
 
 2.3 Attachments or Links
 
@@ -62,11 +69,16 @@ No links
 
 Purpose matches body content (marketing)
 
+
+
 2.4 Overall First Impression
 
 Normal → Benign
 
+
 3. Deep Analysis (Phase 1: Header & Identity)
+
+
 3.1 Header Analysis
 
 Tools used:
@@ -124,6 +136,8 @@ Bottom-most Received = origin
 Top-most Received = mailbox delivery
 
 To confirm the sender:
+
+
 (1) Copy hostname from Received header
 
 Example:
@@ -151,6 +165,8 @@ Machine-generated or human-friendly?
 
 Does it match known ESP patterns?
 
+
+
 (2) Paste hostname/IP into MXToolbox
 
 What to check:
@@ -165,6 +181,8 @@ Spam history
 
 Server owner
 
+
+
 (3) Paste IP into IPinfo or VirusTotal
 
 Check:
@@ -176,6 +194,8 @@ ASN
 Reputation
 
 Hosting type (cloud, residential, VPS)
+
+
 
 (4) Match patterns to known ESP signatures
 
@@ -207,6 +227,8 @@ sales-exec.com (your case)
 
 This confirms commercial email marketing infrastructure.
 
+
+
 (5) Check protocol in bottom-most Received header
 
 "with HTTP" → API submission (marketing, CRM automations)
@@ -215,7 +237,11 @@ This confirms commercial email marketing infrastructure.
 
 This email shows API submission — consistent with marketing automation (TruGreen).
 
+
+
 C. Server Reputation Analysis (OSINT Stack)
+
+
 1. MXToolbox (initial reputation)
 
 Checks:
@@ -227,6 +253,8 @@ SMTP diagnostics
 Spam score
 
 ESP fingerprint
+
+
 
 2. Cisco Talos (threat reputation)
 
@@ -240,6 +268,8 @@ Botnet affiliation
 
 Abuse patterns
 
+
+
 3. IPinfo / WHOIS
 
 Checks:
@@ -249,6 +279,8 @@ Server owner
 Infrastructure type (cloud, VPS, business)
 
 Expected vs unexpected origin
+
+
 
 4. AbuseIPDB
 
@@ -266,6 +298,7 @@ Conclusion (Server):
 
 All indicators consistent with SalesExec → TruGreen marketing pipeline.
 Reputation clean.
+
 
 3.2 Authentication Results (SPF, DKIM, DMARC)
 
@@ -296,32 +329,47 @@ Pass + weird content → possible compromised sender
 
 All fail → spoofing attempt
 
+
 3.3 Sender URL Analysis (Header Only)
 
 This step focuses ONLY on identifying the sender’s domain identity, not body links.
 
+
 The sender’s URL (domain) appears in four header locations:
+
+
 1. Return-Path
 
 Most reliable.
+
+
 
 2. SPF MAILFROM Domain
 
 Found under “Received-SPF: domain of…”
 
+
+
 3. DKIM d= Domain
 
 Found under “dkim=pass … d=…”
+
+
 
 4. Sending Server Hostname (Received headers)
 
 Shows infrastructure domain.
 
+
+
 Summary Principle
 
 The sender’s URL is obtained from Return-Path, SPF MAILFROM, DKIM d=, or the sending server hostname.
+
+
 This identifies who actually sent the message.
 This stage does NOT evaluate clickable links.
+
 
 Mismatches may indicate:
 
