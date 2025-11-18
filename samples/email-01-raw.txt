@@ -1,5 +1,5 @@
 
-## Received: from 127.0.0.1
+Received: from 127.0.0.1
  by atlas-production.v2-mail-prod1-gq1.omega.yahoo.com pod-id atlas--production-gq1-77964d9dd-wqzrc.gq1.yahoo.com with HTTP; Tue, 4 Nov 2025 17:41:53 +0000
 Return-Path: <bounces+1366688-4b01-blackwellrbrt=aol.com@em4053.sales-exec.com>
 X-Originating-Ip: [168.245.19.130]
@@ -10,6 +10,7 @@ Authentication-Results: atlas-production.v2-mail-prod1-gq1.omega.yahoo.com;
  spf=pass smtp.mailfrom=em4053.sales-exec.com arc_overridden_status=NOT_OVERRIDDEN;
  dmarc=pass(p=NONE,sp=NONE) header.from=sales-exec.com arc_overridden_status=NOT_OVERRIDDEN;
 X-Apparently-To: blackwellrbrt@aol.com; Tue, 4 Nov 2025 17:41:54 +0000
+
 X-YMailISG: FSGffEMWLDsXKa7A9JYZ1GB_lniqdwSmO_HaHJrH1.4K8187
  T3UqZ1rMFVhYaqGYa2a_plb70GHENDSvW3SrAgp0Zsx4T2c2lOcHvJO_5YMx
  GlrPuFWfKWehyt7w14NWfr1wWJAPtqrlSgSRn7a0WP3EPw.LLDq.8uoTIdIo
@@ -32,6 +33,7 @@ X-YMailISG: FSGffEMWLDsXKa7A9JYZ1GB_lniqdwSmO_HaHJrH1.4K8187
  g4e2ms2qHDNYpGHArmLJ79HCaI5wVBoqhLkO0vg4iooDBhoq7CWykbmDaT3_
  6UTB.U_hQFL3AfnmcHxX9mwXIJebVd6kVYtDj40f5iQ1PKJVWETCnnGBTraz
  4WKPmX4-
+
 Received: from 168.245.19.130 (EHLO o1.ptr7709.sales-exec.com)
  by 10.215.172.18 with SMTPs
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256);
@@ -54,6 +56,7 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
 	b=tLak1a9YVmZ7ILK28dK0EwaGEQ9ounYmsWA7zxEvx9tAziB1ysxWSLrKLvGCQNJKSQE1
 	JYU1exJn+CGf36XJJrB8KMljTWf9WpHe43AWt5A7hlPjvh4OpaeMnrOHmHBzIoWHg6OKc9
 	g1yPqiE0s1JbcyWCvL6aKFJ4JZD7KF+RA=
+
 Received: by recvd-canary-75b76f449d-zv89v with SMTP id recvd-canary-75b76f449d-zv89v-1-690A35C6-3
 	2025-11-04 17:20:06.017944532 +0000 UTC m=+13284705.630108992
 Received: from MTM2NjY4OA (unknown)
@@ -66,6 +69,7 @@ Date: Tue, 04 Nov 2025 17:20:06 +0000 (UTC)
 From: SE Emails <emails@sales-exec.com>
 Mime-Version: 1.0
 Message-ID: <8a2f582d-5db0-4e6a-9079-0fc58da5f70d.sales-exec.20251104.172005.862@sales-exec.com>
+
 Subject: Local Trugreen Office- Upper Marlboro MD
 Reply-To: brittanypickett@trugreenmail.com
 Sender: brittanypickett@trugreenmail.com
@@ -86,6 +90,7 @@ X-SG-ID:
  =?us-ascii?Q?VK2cdPTTsVrDFpu4gBRxky6CbHb9pdhoxFkG=2Fk+?=
  =?us-ascii?Q?YOqt9maqm4QQ57wfhBh4pD10gNKomi1dCH5wct3?=
  =?us-ascii?Q?DPhWMbM1nrj1oGx6dPFP9nbyWnHzca1+8=3D?=
+
 To: blackwellrbrt@aol.com
 X-Entity-ID: u001.TKAmKdungnG0NSUuI3mzww==
 List-Unsubscribe: 
