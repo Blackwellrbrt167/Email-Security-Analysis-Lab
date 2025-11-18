@@ -10,11 +10,11 @@ Result: Pass
 
 **Sending IP Authorized**: Yes, the IP appears in the SPF record, meaning this sender is authorized to send mail for the domain. 
 
-**Alignment**: Yes; (Envelope form domain matches the HEader from Domain - good judegment) 
+**Alignment**: Yes (Return-Path = domain used in SPF authentication)
 
 **Red Flags/ Notes: No detected**
 - SPF Record is valid and syntacitically correct
-- Contains no suspicious mechanisms (e.g., +all, ?all, multiple includes)
+- No suspicious mechanisms (e.g., +all, ?all, multiple includes)
 - Sending IP belongs to an approved ESP pool
 - Authentication mathces the actual sending path 
 
