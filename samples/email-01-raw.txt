@@ -1,1 +1,242 @@
 
+```
+Received: from 127.0.0.1
+ by atlas-production.v2-mail-prod1-gq1.omega.yahoo.com pod-id atlas--production-gq1-77964d9dd-wqzrc.gq1.yahoo.com with HTTP; Tue, 4 Nov 2025 17:41:53 +0000
+Return-Path: <bounces+1366688-4b01-blackwellrbrt=aol.com@em4053.sales-exec.com>
+X-Originating-Ip: [168.245.19.130]
+Received-SPF: pass (domain of em4053.sales-exec.com designates 168.245.19.130 as permitted sender)
+Authentication-Results: atlas-production.v2-mail-prod1-gq1.omega.yahoo.com;
+ dkim=pass header.i=@sales-exec.com header.s=s1 arc_overridden_status=NOT_OVERRIDDEN;
+ dkim=pass header.i=@sendgrid.info header.s=smtpapi arc_overridden_status=NOT_OVERRIDDEN;
+ spf=pass smtp.mailfrom=em4053.sales-exec.com arc_overridden_status=NOT_OVERRIDDEN;
+ dmarc=pass(p=NONE,sp=NONE) header.from=sales-exec.com arc_overridden_status=NOT_OVERRIDDEN;
+X-Apparently-To: blackwellrbrt@aol.com; Tue, 4 Nov 2025 17:41:54 +0000
+X-YMailISG: FSGffEMWLDsXKa7A9JYZ1GB_lniqdwSmO_HaHJrH1.4K8187
+ T3UqZ1rMFVhYaqGYa2a_plb70GHENDSvW3SrAgp0Zsx4T2c2lOcHvJO_5YMx
+ GlrPuFWfKWehyt7w14NWfr1wWJAPtqrlSgSRn7a0WP3EPw.LLDq.8uoTIdIo
+ tJLn_s0aw.F4XSWo7pOsVkK2YAXUyN6DJobVLc1KWWZy.CAQZmJkTCTDwEi.
+ 5GptERA5BsOzPLvWRdQBJGfbaxoemSB427Sje5Lc8MBIVINIYXML6VxRf2jc
+ 0riE.Jfu75D2yB.d5V2p3BQzfUbivxj3fPMUeGPa_Xm5mJllVkjprPK3as69
+ VgZIErTmyppfYn0jZgTeu_aqi4IiE4mwZPYBVDkI8oxqvfvBWYt26NYQ6PY7
+ u0EFyvROgIJP_n3cNOBEsinYMnDsxwFEG_vbreThABjRCoHHb7xNNFHJLS0X
+ CW6y1LJ3NXPqBopdfVqoF6CtyRFWBbcAVPHzd1oHpxgs32QQdneC_0dvKnmz
+ GeaBsVIbDMfMrtFCcS2Fc_tjrsIgRSZE_iIN7335GPTEA.vbUqovAIVxPu1U
+ uPK80euvkm3gS1PlHJvKFgaXoXFwbl.3idvuzSATjTcm.AaWe82Zm3B1HqY.
+ vp.WMQKsLOVHtn5EN8ISSPms1u0wagWijTRvX.sHBzn00Nuy.guVB2IO7bVM
+ wJxuO2LMlPSkum3P53vXjuvBRnJjDYwKwSfeKkdDwFzJUINlr6Jb6XepK62P
+ 439vacX2p_43jtPg688KSaexVdh7gLwNWLyUVp_k7FSY6BRJH9ptozocScPQ
+ k5o6SddSIfzaBfMkXA9YeURrPGX_7lmrjS6S1Y5fYr1wRsRa3HG6sGt4t2Lr
+ fF18eAEsmTDjAPv.SBI_ByPjUuyDZy9pgQ.KmUZ3n6AdpuJsmt0NzGG.DjCi
+ RSKO.JNsrBcpx_whTEckfEgdhFMGVVLQGFQWPJNZOoeEQHdbBN1QjKJkmBJJ
+ kYTHXqpSRqylKZPREyb7ay_IArbF2_MLFaOXSnIyt2LydZTuuflJox0pQyzh
+ La5NUxDjiE1OIyz0v05yKvT9lP3irLbjWSuyym8JvqSFQW_l6hH_e3armZ6e
+ g4e2ms2qHDNYpGHArmLJ79HCaI5wVBoqhLkO0vg4iooDBhoq7CWykbmDaT3_
+ 6UTB.U_hQFL3AfnmcHxX9mwXIJebVd6kVYtDj40f5iQ1PKJVWETCnnGBTraz
+ 4WKPmX4-
+Received: from 168.245.19.130 (EHLO o1.ptr7709.sales-exec.com)
+ by 10.215.172.18 with SMTPs
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256);
+ Tue, 04 Nov 2025 17:41:53 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sales-exec.com;
+	h=content-transfer-encoding:content-type:date:from:mime-version:subject:
+	reply-to:sender:to:list-unsubscribe:list-unsubscribe-post:cc:content-type:date:
+	from:subject:to;
+	s=s1; bh=INgY3Y7ALRevXREI42fGze/nQiPZbk8VK3BXScXpYaU=;
+	b=Bb4lSbLTGsm5bPSB8V08nRh4XXtCvmca/KhR5XRcJgNdzv0ElLxKY9cu2wi8P346VWiE
+	WR8DXqxUSpe6rQJQSFWScSw3ZWjBg4ZVKTHJy1djsMSDmeoVuEclzaa3ExeGNEPNI8CNXJ
+	evHQkiT/S9WRg2q3796FLaBni+b8yPT8y11CGn3BBnnsELyoHCSvSjTtR70+FECs9vZU+a
+	/coomjh1vCf7Gms3a8TNzPADAzIpfrTQLsvJRE+4Wve/0fQNy1wo76/JFkXwUGeI26jh7F
+	8FJGxjP+hNCR45VhsB4HUqlvuwdeyZ2ZTyKpztakArux4q8suoypQ9TRbcO9wGsA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:date:from:mime-version:subject:
+	reply-to:sender:to:list-unsubscribe:list-unsubscribe-post:cc:content-type:date:
+	from:subject:to;
+	s=smtpapi; bh=INgY3Y7ALRevXREI42fGze/nQiPZbk8VK3BXScXpYaU=;
+	b=tLak1a9YVmZ7ILK28dK0EwaGEQ9ounYmsWA7zxEvx9tAziB1ysxWSLrKLvGCQNJKSQE1
+	JYU1exJn+CGf36XJJrB8KMljTWf9WpHe43AWt5A7hlPjvh4OpaeMnrOHmHBzIoWHg6OKc9
+	g1yPqiE0s1JbcyWCvL6aKFJ4JZD7KF+RA=
+Received: by recvd-canary-75b76f449d-zv89v with SMTP id recvd-canary-75b76f449d-zv89v-1-690A35C6-3
+	2025-11-04 17:20:06.017944532 +0000 UTC m=+13284705.630108992
+Received: from MTM2NjY4OA (unknown)
+	by geopod-ismtpd-7 (SG) with HTTP
+	id TpDJUa-xQGmx4DOFTXp3sA
+	Tue, 04 Nov 2025 17:20:05.940 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Date: Tue, 04 Nov 2025 17:20:06 +0000 (UTC)
+From: SE Emails <emails@sales-exec.com>
+Mime-Version: 1.0
+Message-ID: <8a2f582d-5db0-4e6a-9079-0fc58da5f70d.sales-exec.20251104.172005.862@sales-exec.com>
+Subject: Local Trugreen Office- Upper Marlboro MD
+Reply-To: brittanypickett@trugreenmail.com
+Sender: brittanypickett@trugreenmail.com
+X-SG-EID: 
+ =?us-ascii?Q?u001=2E4j0E9sU0K3dl6hwp0liVtbtX5d9RE7FJ3gcYNwQMuqEKpLoOxMIk+eKGg?=
+ =?us-ascii?Q?9uRooeEiatWtEfhY86Krkc21HsSVmBMS3+Ua3Vh?=
+ =?us-ascii?Q?D5thMsnuTExRyZgKtglO++bxlL+w1Zk9QPH=2FxYY?=
+ =?us-ascii?Q?LKN6uJeWQRWaVJyhMfzrW5SnN0VGup6KfThZGlp?=
+ =?us-ascii?Q?mCs6oE4NOAptkbD2RCU8DfL3xldss6hrtL9yinn?=
+ =?us-ascii?Q?BBYqWN2TgBMsNC4xcT7mw5wIRMHlX+4RF6jr8mt?= =?us-ascii?Q?W90C?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprDVojxlq4xx22e0y?=
+ =?us-ascii?Q?vwuTrrVqxgL2sFF1g3Lz10ip6=2FcUMjB8x=2FEmvJa?=
+ =?us-ascii?Q?ZnA3=2FuFoaBZG9nrUpmOUr1vuwfHRY5I+4cpz+Ao?=
+ =?us-ascii?Q?jQ4N6916nm=2F=2FaWvQDpal=2FHA5+CD3jrtTkYVjU4a?=
+ =?us-ascii?Q?OXElLd+40rV=2FlJapp6+72xVUmde3DT1i9dzfoBe?=
+ =?us-ascii?Q?tubZeG5T6QFB3XDeX5+4suuORLFsR0nQvWG6dgQ?=
+ =?us-ascii?Q?VK2cdPTTsVrDFpu4gBRxky6CbHb9pdhoxFkG=2Fk+?=
+ =?us-ascii?Q?YOqt9maqm4QQ57wfhBh4pD10gNKomi1dCH5wct3?=
+ =?us-ascii?Q?DPhWMbM1nrj1oGx6dPFP9nbyWnHzca1+8=3D?=
+To: blackwellrbrt@aol.com
+X-Entity-ID: u001.TKAmKdungnG0NSUuI3mzww==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Chttps=3A=2F=2Furl5133=2Esales-exec=2Ecom=2Flu=2Funsubscribe=3Foc=3Du001=2E1LBCyJ1?=
+ =?us-ascii?Q?thBxiYjzhaX49VuuQkX5ibIYUyEpvhKpEFNgkns?=
+ =?us-ascii?Q?IWcVKUyD7pKbwgtS-mw78qR=5F-ziwd3vglG49rSf?=
+ =?us-ascii?Q?OE5iQNh-6=5FTTfTs67AI8FXEHOIadfayNxsXASDT?=
+ =?us-ascii?Q?IjOj2-7HXH0ka1TNnkA4XKDq9LHF4p4GFxFhXPr?=
+ =?us-ascii?Q?cIl13P01IUyX055Cf072avGXRczQvjbhal=5FWVWG?=
+ =?us-ascii?Q?WPMwBISZ5pxGkhYt3W54qaNojAxii=5F0vQ94L9Gi?=
+ =?us-ascii?Q?Sl-k1YSjlFvi1NztStpWha0b8wxX868bPCXPMVk?=
+ =?us-ascii?Q?bDL7nnuDKDn4UPShr6ARhwKpDB3EzbvUbAcXjaK?=
+ =?us-ascii?Q?mfUyRyh2CND0WQT-weVwhHsZY5W3ZzFS31smsCf?=
+ =?us-ascii?Q?iWYV8P6hbFtEWvNc24w5mlE2O-Rsf0OkBi5j9HX?=
+ =?us-ascii?Q?8FIAj7Jd6Ai49VhfJsmSDVFnNAKmXbX8X0YeQAO?=
+ =?us-ascii?Q?F6e8IbB6yAXtC=5F=5FZEpkCnwTiO6I-usELjbWF5t-?=
+ =?us-ascii?Q?4S5j3z3vATMaqWaSERVHvfwqM7ZZY09okGkuAfg?=
+ =?us-ascii?Q?HaskWaCQ9Z9sqCsrscMgVwXok04gjB8=5Fvqavvwb?=
+ =?us-ascii?Q?ZDs41G2dqTHGadC9qqfDNo8ud-2DvGiNzkKt4HL?=
+ =?us-ascii?Q?UptxbZ7CgM7B12BsrYhay26J=5F8zq8-t-SUfazJM?=
+ =?us-ascii?Q?BFFis1M9Tat8=5FAxmN10RFEZnsRw1hk=5Fd0BbTTmE?=
+ =?us-ascii?Q?sSI=5FKMazbHefeyWVfcFFLrrcJb2zfB8fhQMYb8Y?=
+ =?us-ascii?Q?=5FzLdo1or7-gB29ay7AALT5cmXiHo38oiF5-Nq2k?=
+ =?us-ascii?Q?YVAG4i9ohBuQmVBXCxTUTldbIT9pglP1ZqgzMMn?=
+ =?us-ascii?Q?YlS=5FTqbPzcvQ7Q2JgPOQoesjnxJ-RxwelnfZmRf?=
+ =?us-ascii?Q?lBhiCPRWpuVRLZHA=5FFbVJVtOukRw=3E=2C=3Cmailto=3Au?=
+ =?us-ascii?Q?nsubscribe=40em4053=2Esales-exec=2Ecom=3Fsubjec?=
+ =?us-ascii?Q?t=3Dhttps=3A=2F=2Furl5133=2Esales-exec=2Ecom=2Fmt=2Fu=2Fu?=
+ =?us-ascii?Q?001=2EhnAI7SW4ETaMHdFQSHwGdMHpBsB9kiuGCys?=
+ =?us-ascii?Q?lgo48cco=2F4lb=2Fu001=2EzR9YyXAb=2Fu001=2EWo0WJ-2?=
+ =?us-ascii?Q?F8WcJnMBeiFDOfY84cN-2BCTwBYMhBm5tjs0XiZ?=
+ =?us-ascii?Q?E2OSF2qmZMdCfSRyaORtmVbmNUicjsIjGBTqhki?=
+ =?us-ascii?Q?kF6UF4bcnoGuGKUumsrgLh-2FinqrZTLaieZ5i7?=
+ =?us-ascii?Q?DttkzlrVYQkhPbhuZ542V4VuRLZnETvJcSSUJn6?=
+ =?us-ascii?Q?WTcPG4sM5Z6iZ-2FnRRB5576OgxBgtrOpcMfr5I?=
+ =?us-ascii?Q?Tsv-2BCZ611yfskD0fKJdUtPK8LxE4-2BQd7VMU?=
+ =?us-ascii?Q?5IYgq7EczPcMZiZqxkSa-2FAqFi-2BDBDLtklJb?=
+ =?us-ascii?Q?fts9YCbeyoZH0Y6yk-2FpyMRBTw6yP1iAJwejeI?=
+ =?us-ascii?Q?9Pupo2zRQ3D5IziZSoXnY-2FXtu7MukrRb3CxFq?=
+ =?us-ascii?Q?sKVwk1u-2B5flUpbkj0yGkueN3RNwg6xjcUg-2F?=
+ =?us-ascii?Q?tE7Hkr7emHSEEdxLpClFeCdGvk9hEwMcTkzHUJq?=
+ =?us-ascii?Q?-2BAzViqAPOl7DhSGXZeyLXSYW-2BcRV9WME6o0?=
+ =?us-ascii?Q?aOBc-2Bcf6phj0Sbc4CoveHWAU4xuxQfrSyF3zf?=
+ =?us-ascii?Q?BmSfGgWpLmfllpec457pdJ3WSwxIFlHw0qUwl5x?=
+ =?us-ascii?Q?oi1Eo16h5w5CVObA5fkTCe-2FnarE5D36c-3D=2Fu?=
+ =?us-ascii?Q?001=2EpsXumahT=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Content-Length: 6792
+
+<html><body><p><p class=3D"x_quote" style=3D"margin-right: 0in; margin-left=
+: 0in; font-size: 12pt; font-family: Aptos, sans-serif; color: rgb(36, 36, =
+36);">Hello,</p><p class=3D"x_quote" style=3D"margin-right: 0in; margin-lef=
+t: 0in; font-size: 12pt; font-family: Aptos, sans-serif; color: rgb(36, 36,=
+ 36);">I am the sales manager at your local TruGreen Lawn Care office. We a=
+re running some GREAT discounts for our Fall Restoration Package. Fall is t=
+he best time to take care of the lawn! NOW is the best time to seed your la=
+wn, and combined with starter fertilizer, your lawn will see a significantl=
+y positive impact before winter, which will carry into the Spring.</p><p cl=
+ass=3D"x_quote" style=3D"margin-right: 0in; margin-left: 0in; font-size: 12=
+pt; font-family: Aptos, sans-serif; color: rgb(36, 36, 36);">=A0We would lo=
+ve to get you a great price! Please respond to this email if you are intere=
+sted or call me directly at 240-302-5627.</p><p><span style=3D"border:0px;f=
+ont-style:inherit;font-variant:inherit;font-weight:inherit;font-size:14pt;l=
+ine-height:inherit;font-family:'Sitka Heading', Cochin, serif;font-optical-=
+sizing:inherit;font-kerning:inherit;font-feature-settings:inherit;font-vari=
+ation-settings:inherit;margin:0px;padding:0px;vertical-align:baseline;color=
+:#0c882a;"><span style=3D"color: rgb(36, 36, 36); font-family: Aptos, sans-=
+serif; font-size: 12pt;">=A0Can't wait to hear from you!</span></span></p><=
+p><span style=3D"border:0px;font-style:inherit;font-variant:inherit;font-we=
+ight:inherit;font-size:14pt;line-height:inherit;font-family:'Sitka Heading'=
+, Cochin, serif;font-optical-sizing:inherit;font-kerning:inherit;font-featu=
+re-settings:inherit;font-variation-settings:inherit;margin:0px;padding:0px;=
+vertical-align:baseline;color:#0c882a;"><strong>Brittany Pickett</strong></=
+span><br><span style=3D"border:0px;font-style:inherit;font-variant:inherit;=
+font-weight:inherit;font-size:14pt;line-height:inherit;font-family:'Sitka H=
+eading', Cochin, serif;font-optical-sizing:inherit;font-kerning:inherit;fon=
+t-feature-settings:inherit;font-variation-settings:inherit;margin:0px;paddi=
+ng:0px;vertical-align:baseline;color:#0c882a;">Branch Sales Manager<strong>=
+=A0</strong></span><br><span style=3D"border:0px;font-style:inherit;font-va=
+riant:inherit;font-weight:inherit;font-size:12pt;line-height:inherit;font-f=
+amily:'Sitka Heading', Cochin, serif;font-optical-sizing:inherit;font-kerni=
+ng:inherit;font-feature-settings:inherit;font-variation-settings:inherit;ma=
+rgin:0px;padding:0px;vertical-align:baseline;color:#0c882a;">403 Prince Geo=
+rge Blvd.</span><br><span style=3D"border:0px;font-style:inherit;font-varia=
+nt:inherit;font-weight:inherit;font-size:12pt;line-height:inherit;font-fami=
+ly:'Sitka Heading', Cochin, serif;font-optical-sizing:inherit;font-kerning:=
+inherit;font-feature-settings:inherit;font-variation-settings:inherit;margi=
+n:0px;padding:0px;vertical-align:baseline;color:#0c882a;">Upper Marlboro, M=
+D 20774</span><br><span style=3D"border:0px;font-style:inherit;font-variant=
+:inherit;font-weight:inherit;font-size:18.67px;line-height:inherit;font-fam=
+ily:'Sitka Heading', Cochin, serif;font-optical-sizing:inherit;font-kerning=
+:inherit;font-feature-settings:inherit;font-variation-settings:inherit;marg=
+in:0px;padding:0px;vertical-align:baseline;color:#0c882a;">240-302-5627</sp=
+an><br><span style=3D"border:0px;font-style:inherit;font-variant:inherit;fo=
+nt-weight:inherit;font-size:14pt;line-height:inherit;font-family:'Palatino =
+Linotype', 'Book Antiqua', Palatino, serif;font-optical-sizing:inherit;font=
+-kerning:inherit;font-feature-settings:inherit;font-variation-settings:inhe=
+rit;margin:0px;padding:0px;vertical-align:baseline;color:#424242;">=A0</spa=
+n><br><span style=3D"border:0px;font-style:inherit;font-variant:inherit;fon=
+t-weight:inherit;font-size:14pt;line-height:inherit;font-family:Georgia, se=
+rif;font-optical-sizing:inherit;font-kerning:inherit;font-feature-settings:=
+inherit;font-variation-settings:inherit;margin:0px;padding:0px;vertical-ali=
+gn:baseline;color:#424242;"><img class=3D"Do8Zj" height=3D"69" src=3D"#" st=
+yle=3D"border:0px;font:inherit;margin:0px;padding:0px;vertical-align:baseli=
+ne;color:inherit;animation:0.1s ease-out 0s 1 normal none running Do8Zj;max=
+-width:800px;cursor:pointer;min-height:auto;min-width:auto;" width=3D"225">=
+</span><br></p></p>
+
+<div style=3D"width: 400px; margin-left: auto; margin-right: auto">
+<p style=3D"text-align: center; font-family: arial; font-size: 8pt; color: =
+#8F8F8F"><br />
+<br />
+<span>This email was sent using SalesExec&trade;<br />
+To report abuse please contact: <a href=3D"mailto:report@emails.sales-exec.=
+net" style=3D"color: #61B2E1; text-decoration: none;">report@emails.sales-e=
+xec.net</a></span></p>
+</div>
+<div id=3D"unsubscribe" style=3D"width: 400px; margin-left: auto; margin-ri=
+ght: auto">
+	<p style=3D"text-align: center; font-family: arial; font-size: 8pt; color:=
+ #8F8F8F">
+		<span>If you would like to unsubscribe and stop receiving these emails <a=
+ href=3D"https://url5133.sales-exec.com/wf/unsubscribe?upn=3Du001.M9ZaL969x=
+Hy20wObuD3sYI3YD9UOMupYSb4zQ0XOy1-2B-2BwXE16SQyYrNFugVGWICAQ8gucz-2B8tfKmRF=
+gXHpCRtSEIZ981lkfxTEp8JTARBVvu4o5eDHILXQbdwCmZRLGLFnv15N2NBQGGqwJxvRXUA3laO=
+mOsl2ZJx-2FGOMNbN7b59oefWSjoQAZT6YddxQmMSUcXg0VehhUTY4xyUjZqrzAQMsKgtI2fMPR=
+MWgvroAeVvk30oaQYuofPR0gVdaSPvp5GZ8Q30Edazx6ckO5ZIn5wFfJGdNRbaZ6MSTzSm-2BNn=
+3895LrGHNGnIfha977CXNGkQ2V885N3Wof3x6XZ7dt2Z7UI6eIS1wXfJh3t34-2FbehHXWGUT0z=
+ad4aW-2FERjwfzCTEz3HIpX5fTLEPnfu96HjFvoNZjTSq0HiCBsHZbUHHqJZaMqxStnBP2y6TEL=
+X8eGEY4JRVyEA9irm4HXgZjJN2yDJ0KMCmR2xy7mfl2XHl-2BpbpD2-2BH81tp3AGtC1AQGUXdr=
+NBsWK6ijwwcHYu5GDYS0NAH5HV0EWygJL0KhDFw-3D"> click here </a>.</span></p>
+</div>
+<img src=3D"https://url5133.sales-exec.com/wf/open?upn=3Du001.M9ZaL969xHy20=
+wObuD3sYI3YD9UOMupYSb4zQ0XOy1-2B-2BwXE16SQyYrNFugVGWICAQ8gucz-2B8tfKmRFgXHp=
+CRtSEIZ981lkfxTEp8JTARBVvu4o5eDHILXQbdwCmZRLGLFnv15N2NBQGGqwJxvRXUA3laOmOsl=
+2ZJx-2FGOMNbN7b59oefWSjoQAZT6YddxQmMSUcXg0VehhUTY4xyUjZqrzAQMsKgtI2fMPRMWgv=
+roAeVvk30oaQYuofPR0gVdaSPvp5GZ8Q30Edazx6ckO5ZIn5wFfJGdNRbaZ6MSTzSm-2BNn3895=
+LrGHNGnIfha977CXNGkQ2V885N3Wof3x6XZ7dt2Z7UI6eIS1wXfJh3t34-2FbehHXWGUT0zad4a=
+W-2FERjwfzufXbtE6WZ0BHuEdvBDP2X5IS9az0XTHlsGAEEYn3bKQxBLr-2FBQ-2BAVQLj8BFHg=
+VeTadHFT3yxGRzNEte2ktydaoz7IgVlcv1CvAKSBCDbu5uj9q-2BDW-2FNn-2Bg-2FKQD6ynmdI=
+PJTo1qZiu87HQaF2jJpJncXzJ0rDdxhfkVG5k2UGKZM-3D" alt=3D"" width=3D"1" height=
+=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !important;bor=
+der-width:0 !important;margin-top:0 !important;margin-bottom:0 !important;m=
+argin-right:0 !important;margin-left:0 !important;padding-top:0 !important;=
+padding-bottom:0 !important;padding-right:0 !important;padding-left:0 !impo=
+rtant;"/></body></html>
+
+```
+
+
+
+
+
