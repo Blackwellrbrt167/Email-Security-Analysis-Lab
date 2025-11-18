@@ -1,6 +1,5 @@
 
-```
-Received: from 127.0.0.1
+## Received: from 127.0.0.1
  by atlas-production.v2-mail-prod1-gq1.omega.yahoo.com pod-id atlas--production-gq1-77964d9dd-wqzrc.gq1.yahoo.com with HTTP; Tue, 4 Nov 2025 17:41:53 +0000
 Return-Path: <bounces+1366688-4b01-blackwellrbrt=aol.com@em4053.sales-exec.com>
 X-Originating-Ip: [168.245.19.130]
@@ -234,7 +233,7 @@ argin-right:0 !important;margin-left:0 !important;padding-top:0 !important;=
 padding-bottom:0 !important;padding-right:0 !important;padding-left:0 !impo=
 rtant;"/></body></html>
 
-```
+
 
 
 
