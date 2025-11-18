@@ -13,6 +13,9 @@ Sending IP Authorized: Yes, the IP appears in the SPF record, meaning this sende
 Alignment: Yes; (Envelope form domain matches the HEader from Domain - good judegment) 
 
 Red Flags/ Notes: No detected
-The SPF record was published, valid syntazt, and incldues no suspcious includes or "+all" patterns.
+- SPF Record is valid and syntacitically correct
+- Contains no suspicious mechanisms (e.g., +all, ?all, multiple includes)
+- Sending IP belongs to an approved ESP pool
+- Authentication mathces the actual sending path 
 
 
