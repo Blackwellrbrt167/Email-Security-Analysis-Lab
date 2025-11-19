@@ -51,3 +51,34 @@ v=DMARC1; p=none; sp=none; adkim=r; aspf=r; rua=mailto:dmarc_agg@vali.email,mail
 - External reporting used: Yes 
 
 
+## DKIM Analysis 
+
+**Result**: Pass
+
+**Domain**:d=sales-exec.com
+
+**Selector**: s=s1
+
+**DKIM Signature Extracted**:
+v=1; a=rsa-sha256; c=relaxed/relaxed; d=sales-exec.com; h=content-transfer-encoding:content-type:date:from:mime-version:subject: reply-to:sender:to:list-unsubscribe:list-unsubscribe-post:cc:content-type:date: from:subject:to; s=s1; bh=INgY3Y7ALRevXREI42fGze/nQiPZbk8VK3BXScXpYaU=; b=Bb4lSbLTGsm5bPSB8V08nRh4XXtCvmca/KhR5XRcJgNdzv0ElLxKY9cu2wi8P346VWiE WR8DXqxUSpe6rQJQSFWScSw3ZWjBg4ZVKTHJy1djsMSDmeoVuEclzaa3ExeGNEPNI8CNXJ evHQkiT/S9WRg2q3796FLaBni+b8yPT8y11CGn3BBnnsELyoHCSvSjTtR70+FECs9vZU+a /coomjh1vCf7Gms3a8TNzPADAzIpfrTQLsvJRE+4Wve/0fQNy1wo76/JFkXwUGeI26jh7F 8FJGxjP+hNCR45VhsB4HUqlvuwdeyZ2ZTyKpztakArux4q8suoypQ9TRbcO9wGsA==
+
+**DKIM Public Key Record Extracted**:
+k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqmXlq2KC7B/56KFrfPLXHuMPfEy6i4ll0/SloT7X11P9iVKxEiZ2sBKFPolgxhci760dKWADDjir2NPrY5bLQN0ynYsKAtVBWbTj45Wv7BqXaHdpif/NCRVdHpi3rkHcl0jGMjzvaR517L7SsUZMWQaVcipcCrE9wPBGrUcLb1dbjwoWEKce8Gy1EiwM+FtmqgDnEn+rbt/m2lZdUdh4DNaEJGaPelqZH8uANWgZ6vdRm8hZ11kIJy2TZTvHZSLNaKwtF3OkeTZ1YIk1LejKH0Z3seVHqNH1qcbf0tQFLrLf0/vhVB49R2rECEzHk7IgJisBUbJQLZ+OAflr8oLsrQIDAQAB
+
+**Signature Validation**:
+- Valid -crytographic check passed
+
+**Alignment Check**:
+- Aligned
+- DKIM d=sales-exec.com  match the Header-From domain sales-exec.com
+
+**Key Length**: 2048
+- Acceptable
+
+**Selector Configuration Health**:
+- Public Key Present in DNS: Yes 
+- Selector uses appropriate TTL: Yes
+- Valid DKIM version (v=DKIM1): Yes 
+
+**Red flags/Notes**: None 
+
