@@ -54,6 +54,7 @@ v=DMARC1; p=none; sp=none; adkim=r; aspf=r; rua=mailto:dmarc_agg@vali.email,mail
 ## DKIM Analysis 
 
 **DKIM #1**
+
 **Result**: Pass
 
 **Domain**:d=sales-exec.com
