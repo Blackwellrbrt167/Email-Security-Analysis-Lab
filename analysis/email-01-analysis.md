@@ -116,13 +116,14 @@ k=rsa; t=s; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDPtW5iwpXVPiH5FzJ7Nrl8USzuY9
 - Not aligned (normal for ESPs using shared DKIM)
 - Sender likely uses Sendgrid without custom DKIM branding 
 
-## Final verdict
+### Final Verdict
 
-**SPF**: Pass
-**DKIM**: Pass
-**DMARC**: Pass
+**SPF:** Pass  
+**DKIM:** Pass (includes ESP DKIM)  
+**DMARC:** Pass  
 
-- Sender used non-custom Sendgrid as an ESP
+**Summary:**  
+Sender authenticated successfully. Message was routed through SendGrid using a shared (non-custom) DKIM domain. This is normal for many SaaS marketing systems and does not impact security alignment.
 
-**Recommended Action**: Allow 
-
+**Risk Rating:** Low  
+**Recommended Action:** Allow
