@@ -70,7 +70,7 @@ k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqmXlq2KC7B/56KFrfPLXHu
 
 **Alignment Check**:
 - Aligned
-- DKIM d=sales-exec.com  match the Header-From domain sales-exec.com
+- DKIM d=sales-exec.com  matches the Header-From domain sales-exec.com
 
 **Key Length**: 2048
 - Acceptable
