@@ -84,3 +84,33 @@ k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqmXlq2KC7B/56KFrfPLXHu
 
 **Red flags/Notes**: None 
 
+**DKIM #2**
+
+**Result**: Pass
+
+**Domain**: d=sendgrid.info
+
+**Selector**: t=s
+
+**DKIM Signature Extracted**:
+v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info; h=content-transfer-encoding:content-type:date:from:mime-version:subject: reply-to:sender:to:list-unsubscribe:list-unsubscribe-post:cc:content-type:date: from:subject:to; s=smtpapi; bh=INgY3Y7ALRevXREI42fGze/nQiPZbk8VK3BXScXpYaU=; b=tLak1a9YVmZ7ILK28dK0EwaGEQ9ounYmsWA7zxEvx9tAziB1ysxWSLrKLvGCQNJKSQE1 JYU1exJn+CGf36XJJrB8KMljTWf9WpHe43AWt5A7hlPjvh4OpaeMnrOHmHBzIoWHg6OKc9 g1yPqiE0s1JbcyWCvL6aKFJ4JZD7KF+RA=
+
+**DKIM Public Key Record Extracted**:
+k=rsa; t=s; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDPtW5iwpXVPiH5FzJ7Nrl8USzuY9zqqzjE0D1r04xDN6qwziDnmgcFNNfMewVKN2D1O+2J9N14hRprzByFwfQW76yojh54Xu3uSbQ3JP0A7k8o8GutRF8zbFUA8n0ZH2y0cIEjMliXY4W4LwPA7m4q0ObmvSjhd63O9d8z1XkUBwIDAQAB
+
+**Signature Validation**: Valid cryptogrpahic check pass 
+
+**Alignment Check**: not Aligned 
+- DKIM d=sendgrid.info does not match Header-from domain: mime-version
+
+**Key Length**: 1024
+- Weak 
+
+**Selector Configuration Health**:
+- Public Key Present in DNS: Yes 
+- Selector uses appropriate TTL: Yes 
+- Valid DKIM version (v=DKIM1): Yes
+
+**Red Flags/ Notes** 
+- Weak Key length
+- Looks like legitimate ESP (Sendgrid)
