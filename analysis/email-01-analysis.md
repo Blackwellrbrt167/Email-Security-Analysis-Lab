@@ -101,7 +101,7 @@ k=rsa; t=s; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDPtW5iwpXVPiH5FzJ7Nrl8USzuY9
 **Signature Validation**: Valid cryptogrpahic check pass 
 
 **Alignment Check**: not Aligned 
-- DKIM d=sendgrid.info does not match Header-from domain: mime-version
+- DKIM d=sendgrid.info does not match Header-from domain: sales-exec.com.
 
 **Key Length**: 1024
 - Weak 
@@ -113,4 +113,5 @@ k=rsa; t=s; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDPtW5iwpXVPiH5FzJ7Nrl8USzuY9
 
 **Red Flags/ Notes** 
 - Weak Key length
-- Looks like legitimate ESP (Sendgrid)
+- Not aligned (normal for ESPs using shared DKIM)
+- Sender likely uses Sendgrid without custom DKIM branding 
