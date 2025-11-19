@@ -20,3 +20,22 @@ Aligned — the Return-Path domain matches the domain used in SPF authentication
 - Suspicious mechanisms (`+all`, `?all`, unusual includes): No  
 - Sending IP belongs to approved ESP pool: Yes  
 - Authentication matches actual sending path: Yes  
+
+
+## DMARC Analysis
+**Results**: Failed 
+
+**Domain(Header From)**: sales-exec.com
+
+**DMARC Record Extracted**: 
+v=DMARC1; p=none; sp=none; adkim=r; aspf=r; rua=mailto:dmarc_agg@vali.email,mailto:dmarc-reports@sales-exec.com; ruf=mailto:dmarc-failures@sales-exec.com; fo=1
+
+**DMARC Policy Applied**: DMARC Quarantine/Reject Polocy not enabled
+
+**Alignment Check**: Aligned; The DMARC alignment check succeeds because the Header-From domain matches.
+
+**Identifier Alignment**:
+- SPF Indentifier Aligned: Yes
+- DKIM Identifier Aligned: Yes 
+
+
