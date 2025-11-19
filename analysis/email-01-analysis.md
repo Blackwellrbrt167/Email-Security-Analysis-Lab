@@ -36,6 +36,18 @@ v=DMARC1; p=none; sp=none; adkim=r; aspf=r; rua=mailto:dmarc_agg@vali.email,mail
 
 **Identifier Alignment**:
 - SPF Indentifier Aligned: Yes
-- DKIM Identifier Aligned: Yes 
+- DKIM Identifier Aligned: Yes
+
+**Sending Domain Authenticated**: Yes 
+
+**Forensic/Failure Reporting Addresses**: 
+- ruf: malito:dmarc-failures@sales-exec.com
+- rua: malito:dmarc_agg@vali.email,malito:dmarc-reports@sales-exec.com
+
+**Red Flags/Notes**:
+- DMAR Record syntax valid: Yes
+- Policy Protective: No (Policy is None)
+- Alignment Mode: Relaxed
+- External reporting used: Yes 
 
 
