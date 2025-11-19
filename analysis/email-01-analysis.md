@@ -116,7 +116,7 @@ k=rsa; t=s; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDPtW5iwpXVPiH5FzJ7Nrl8USzuY9
 - Not aligned (normal for ESPs using shared DKIM)
 - Sender likely uses Sendgrid without custom DKIM branding 
 
-### Final Verdict
+## Final Verdict
 
 **SPF:** Pass  
 **DKIM:** Pass (includes ESP DKIM)  
