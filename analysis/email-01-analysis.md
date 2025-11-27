@@ -1,129 +1,197 @@
-## SPF Analysis
+1.1 Bottom-Most “Received” Header (True Origin)
+Field	Value
+Hostname	o1.ptr7709.sales-exec.com
+IP Address	168.245.19.130
+Protocol	HTTP
+Infrastructure Type	ESP (SendGrid)
 
-**Result**: Pass
+Interpretation:
 
-**Domain** (Envelope From/Return-Path): sales-exec.com
+Hostname is human readable → matches ESP formatting.
 
-**Record Extracted**:
-v=spf1 ip4:167.89.7.21 ip4:168.245.19.130 -all
+IP belongs to SendGrid, not the corporate domain.
 
-**Observed Sending IP**: 168.245.19.130
+HTTP indicates API-based sending (automation).
 
-**Sending IP Authorized?**  
-Yes — the sending IP 168.245.19.130 appears in the SPF record and is authorized to send mail for sales-exec.com.
-
-****Alignment***:
-Aligned — the Return-Path domain matches the domain used in SPF authentication.
-
-**Red Flags / Notes**: None detected
-- SPF record is valid and syntactically correct: Yes  
-- Suspicious mechanisms (`+all`, `?all`, unusual includes): No  
-- Sending IP belongs to approved ESP pool: Yes  
-- Authentication matches actual sending path: Yes  
+<img width="975" height="156" alt="image" src="https://github.com/user-attachments/assets/0885f65f-1efa-48cc-84f4-f1a0ebd2ce48" />
 
 
-## DMARC Analysis
-**Results**: Failed 
+1.2 Hostname Ownership (MXToolbox Lookup)
+Field	Value
+Hostname	o1.ptr7709.sales-exec.com
+Resolution	Yes
+Provider	SendGrid (Twilio)
+Blacklist Status	Clean
 
-**Domain(Header From)**: sales-exec.com
+Interpretation:
+Hostname resolves correctly and is clean across blacklists.
 
-**DMARC Record Extracted**: 
-v=DMARC1; p=none; sp=none; adkim=r; aspf=r; rua=mailto:dmarc_agg@vali.email,mailto:dmarc-reports@sales-exec.com; ruf=mailto:dmarc-failures@sales-exec.com; fo=1
-
-**DMARC Policy Applied**: DMARC Quarantine/Reject Polocy not enabled
-
-**Alignment Check**: Aligned; The DMARC alignment check succeeds because the Header-From domain matches.
-
-**Identifier Alignment**:
-- SPF Indentifier Aligned: Yes
-- DKIM Identifier Aligned: Yes
-
-**Sending Domain Authenticated**: Yes 
-
-**Forensic/Failure Reporting Addresses**: 
-- ruf: malito:dmarc-failures@sales-exec.com
-- rua: malito:dmarc_agg@vali.email,malito:dmarc-reports@sales-exec.com
-
-**Red Flags/Notes**:
-- DMAR Record syntax valid: Yes
-- Policy Protective: No (Policy is None)
-- Alignment Mode: Relaxed
-- External reporting used: Yes 
+<img width="692" height="133" alt="image" src="https://github.com/user-attachments/assets/b22d679f-4c91-4a1b-a726-82cce85adfc6" />
 
 
-## DKIM Analysis 
 
-**DKIM #1**
+<img width="926" height="635" alt="image" src="https://github.com/user-attachments/assets/1a13010f-69f0-4ec5-8bbc-873b4315ae5b" />
 
-**Result**: Pass
 
-**Domain**:d=sales-exec.com
+1.3 IP Ownership (IPinfo + VirusTotal)
+Field	Value
+IP	168.245.19.130
+Owner / ISP	SendGrid / Twilio
+ASN	AS11377
+IPinfo Reputation	Clean
+VirusTotal Reputation	0/90 flagged
 
-**Selector**: s=s1
+Interpretation:
+Matches major ESP infrastructure and shows no abuse detections.
 
-**DKIM Signature Extracted**:
-v=1; a=rsa-sha256; c=relaxed/relaxed; d=sales-exec.com; h=content-transfer-encoding:content-type:date:from:mime-version:subject: reply-to:sender:to:list-unsubscribe:list-unsubscribe-post:cc:content-type:date: from:subject:to; s=s1; bh=INgY3Y7ALRevXREI42fGze/nQiPZbk8VK3BXScXpYaU=; b=Bb4lSbLTGsm5bPSB8V08nRh4XXtCvmca/KhR5XRcJgNdzv0ElLxKY9cu2wi8P346VWiE WR8DXqxUSpe6rQJQSFWScSw3ZWjBg4ZVKTHJy1djsMSDmeoVuEclzaa3ExeGNEPNI8CNXJ evHQkiT/S9WRg2q3796FLaBni+b8yPT8y11CGn3BBnnsELyoHCSvSjTtR70+FECs9vZU+a /coomjh1vCf7Gms3a8TNzPADAzIpfrTQLsvJRE+4Wve/0fQNy1wo76/JFkXwUGeI26jh7F 8FJGxjP+hNCR45VhsB4HUqlvuwdeyZ2ZTyKpztakArux4q8suoypQ9TRbcO9wGsA==
+<img width="975" height="590" alt="image" src="https://github.com/user-attachments/assets/4464ef90-621d-4c7a-b94e-8d6c13f59388" />
 
-**DKIM Public Key Record Extracted**:
-k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqmXlq2KC7B/56KFrfPLXHuMPfEy6i4ll0/SloT7X11P9iVKxEiZ2sBKFPolgxhci760dKWADDjir2NPrY5bLQN0ynYsKAtVBWbTj45Wv7BqXaHdpif/NCRVdHpi3rkHcl0jGMjzvaR517L7SsUZMWQaVcipcCrE9wPBGrUcLb1dbjwoWEKce8Gy1EiwM+FtmqgDnEn+rbt/m2lZdUdh4DNaEJGaPelqZH8uANWgZ6vdRm8hZ11kIJy2TZTvHZSLNaKwtF3OkeTZ1YIk1LejKH0Z3seVHqNH1qcbf0tQFLrLf0/vhVB49R2rECEzHk7IgJisBUbJQLZ+OAflr8oLsrQIDAQAB
+<img width="569" height="657" alt="image" src="https://github.com/user-attachments/assets/ea11d4c7-7532-456c-94f5-f929adb014b7" />
 
-**Signature Validation**:
-- Valid -crytographic check passed
+<img width="635" height="752" alt="image" src="https://github.com/user-attachments/assets/a2874884-df97-4aca-b282-76b47b8ff874" />
 
-**Alignment Check**:
-- Aligned
-- DKIM d=sales-exec.com  matches the Header-From domain sales-exec.com
+<img width="774" height="470" alt="image" src="https://github.com/user-attachments/assets/4f053cb0-d1c0-4f78-9470-14a5c5fc65e7" />
 
-**Key Length**: 2048
-- Acceptable
 
-**Selector Configuration Health**:
-- Public Key Present in DNS: Yes 
-- Selector uses appropriate TTL: Yes
-- Valid DKIM version (v=DKIM1): Yes 
 
-**Red flags/Notes**: None 
 
-**DKIM #2**
+1.4 ESP Pattern Validation (SendGrid)
+Evidence Type	Value
+DKIM d=	sendgrid.info ; sales-exec.com
+ASN/IP	168.245.19.130 / AS11377
+Header Tags	X-SG-EID ; X-SG-ID
+Pattern Match	Yes
 
-**Result**: Pass
+Interpretation:
+All indicators align with SendGrid’s email marketing infrastructure.
 
-**Domain**: d=sendgrid.info
+<img width="763" height="415" alt="image" src="https://github.com/user-attachments/assets/eef55158-01d3-41f9-9ecd-8eace5d124b0" />
 
-**Selector**: t=s
 
-**DKIM Signature Extracted**:
-v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info; h=content-transfer-encoding:content-type:date:from:mime-version:subject: reply-to:sender:to:list-unsubscribe:list-unsubscribe-post:cc:content-type:date: from:subject:to; s=smtpapi; bh=INgY3Y7ALRevXREI42fGze/nQiPZbk8VK3BXScXpYaU=; b=tLak1a9YVmZ7ILK28dK0EwaGEQ9ounYmsWA7zxEvx9tAziB1ysxWSLrKLvGCQNJKSQE1 JYU1exJn+CGf36XJJrB8KMljTWf9WpHe43AWt5A7hlPjvh4OpaeMnrOHmHBzIoWHg6OKc9 g1yPqiE0s1JbcyWCvL6aKFJ4JZD7KF+RA=
+1.5 Protocol Interpretation
+Field	Value
+Protocol	HTTP (SendGrid API) / SMTP (sales-exec.com)
 
-**DKIM Public Key Record Extracted**:
-k=rsa; t=s; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDPtW5iwpXVPiH5FzJ7Nrl8USzuY9zqqzjE0D1r04xDN6qwziDnmgcFNNfMewVKN2D1O+2J9N14hRprzByFwfQW76yojh54Xu3uSbQ3JP0A7k8o8GutRF8zbFUA8n0ZH2y0cIEjMliXY4W4LwPA7m4q0ObmvSjhd63O9d8z1XkUBwIDAQAB
+Interpretation:
+Marketing campaign sent via API → automated, not manually crafted.
 
-**Signature Validation**: Valid cryptogrpahic check pass 
+<img width="820" height="159" alt="image" src="https://github.com/user-attachments/assets/6f87505b-584b-42f4-956c-103dc46a7b45" />
 
-**Alignment Check**: not Aligned 
-- DKIM d=sendgrid.info does not match Header-from domain: sales-exec.com.
+<img width="945" height="148" alt="image" src="https://github.com/user-attachments/assets/1b93fe91-2169-4ec1-8906-83e5a46abb1d" />
 
-**Key Length**: 1024
-- Weak 
+1.6 Email Authentication (SPF / DKIM / DMARC)
+Mechanism	Result	Domain	Alignment
+SPF	Pass	em4053.sales-exec.com	✔ Aligned
+DKIM	Pass	sendgrid.info / sales-exec.com	✔ Aligned
+DMARC	Pass	p=none	⚠ Not aligned (monitor mode)
 
-**Selector Configuration Health**:
-- Public Key Present in DNS: Yes 
-- Selector uses appropriate TTL: Yes 
-- Valid DKIM version (v=DKIM1): Yes
+Interpretation:
+Normal authentication results for an ESP-sent marketing email.
 
-**Red Flags/ Notes** 
-- Weak Key length
-- Not aligned (normal for ESPs using shared DKIM)
-- Sender likely uses Sendgrid without custom DKIM branding 
+<img width="975" height="320" alt="image" src="https://github.com/user-attachments/assets/8ac46111-17cc-45b2-8c0e-b6f55e5ffa06" />
 
-## Final Verdict
 
-**SPF:** Pass  
-**DKIM:** Pass (includes ESP DKIM)  
-**DMARC:** Pass  
+2️⃣ URL & DOMAIN IDENTITIES
+2.1 Domain Identity Mapping
+Field	Value
+Return-Path	bounces+1366688-4b01-blackwellrbrt=aol.com@em4053.sales-exec.com
 
-**Summary:**  
-Sender authenticated successfully. Message was routed through SendGrid using a shared (non-custom) DKIM domain. This is normal for many SaaS marketing systems and does not impact security alignment.
+MAILFROM (SPF)	sales-exec.com
+DKIM d=	sales-exec.com
+Received-From Domain	o1.ptr7709.sales-exec.com
+Final Identity Match	Yes
 
-**Risk Rating:** Low  
-**Recommended Action:** Allow
+Interpretation:
+All domains align logically in the context of an ESP sending on behalf of a marketing customer.
+
+<img width="1420" height="833" alt="image" src="https://github.com/user-attachments/assets/d3db3832-0b67-4d91-8510-fcf399c9ea9a" />
+
+<img width="890" height="762" alt="image" src="https://github.com/user-attachments/assets/37fc4278-105f-406d-9b60-0d0c315dd4bc" />
+
+<img width="908" height="743" alt="image" src="https://github.com/user-attachments/assets/b5e41ecc-f99c-493b-9a6e-4c5d49170552" />
+
+
+
+
+3️⃣ CONTENT ANALYSIS
+Indicator	Observation
+Urgency	None
+Sensitive Data Request	None
+Tone	Upbeat / marketing
+Grammar	Correct
+Brand Consistency	Matches TruGreen
+Content Risk	Low
+
+Interpretation:
+Content fully matches expected promotional messaging.
+
+
+<img width="1489" height="605" alt="image" src="https://github.com/user-attachments/assets/0b1c8603-5dbf-4ae1-a225-790377d06e34" />
+
+
+4️⃣ THREAT CLASSIFICATION
+Classification	Reason
+Benign	All authentication aligned; content legitimate; IP/domain clean; reflects normal marketing behavior.
+
+5️⃣ FINAL DETERMINATION
+Final Verdict	Supporting Evidence
+Benign	SPF/DKIM/DMARC pass; SendGrid ownership confirmed; no malicious signals; content consistent with TruGreen.
+
+
+<img width="975" height="590" alt="image" src="https://github.com/user-attachments/assets/d12d1f20-29ce-4a89-8885-5e7eaef0a2e8" />
+
+<img width="926" height="635" alt="image" src="https://github.com/user-attachments/assets/1d09ccd3-17a0-4844-9fad-6d34e750b7dc" />
+
+<img width="923" height="625" alt="image" src="https://github.com/user-attachments/assets/6f67e1d9-7ae6-4bba-b604-a95af2d698e2" />
+
+<img width="975" height="320" alt="image" src="https://github.com/user-attachments/assets/4cc1ccc5-8ae4-4ae4-a485-6fc0e8001daf" />
+
+
+
+
+6️⃣ RECOMMENDED ACTION
+
+Action: Add sender/domain to Safe List
+
+7️⃣ MACHINE LEARNING LABEL OUTPUT
+
+→ Save separately as:
+labels/email-01-label.md
+
+Field	Value
+Classification	Low Risk
+Subtype	Marketing
+Risk Level	Benign
+
+Key Indicators
+
+No malware/credential harvest signals
+
+SPF/DKIM/DMARC passed
+
+SendGrid (Twilio) confirmed as ESP
+
+IP reputation clean via IPinfo + VirusTotal
+
+Authentication
+
+SPF: Pass (Aligned)
+DKIM: Pass (Aligned)
+DMARC: Pass (p=none)
+
+
+<img width="975" height="320" alt="image" src="https://github.com/user-attachments/assets/c931a5e6-002e-4dfa-b92b-72c35f73d236" />
+
+
+8️⃣ REFLECTION
+
+What I learned:
+
+How to read multi-hop “Received” chains
+
+How ESPs like SendGrid structure authentication
+
+Why benign marketing emails often resemble malicious ones
+
+Importance of alignment between MAILFROM, DKIM, and sending IPs
+
