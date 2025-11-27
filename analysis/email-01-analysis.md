@@ -1,4 +1,5 @@
-1.1 Bottom-Most “Received” Header (True Origin)
+## 1.1 Bottom-Most “Received” Header (True Origin)
+
 Field	Value
 Hostname	o1.ptr7709.sales-exec.com
 IP Address	168.245.19.130
@@ -16,7 +17,8 @@ HTTP indicates API-based sending (automation).
 <img width="975" height="156" alt="image" src="https://github.com/user-attachments/assets/0885f65f-1efa-48cc-84f4-f1a0ebd2ce48" />
 
 
-1.2 Hostname Ownership (MXToolbox Lookup)
+## 1.2 Hostname Ownership (MXToolbox Lookup)
+
 Field	Value
 Hostname	o1.ptr7709.sales-exec.com
 Resolution	Yes
@@ -33,7 +35,9 @@ Hostname resolves correctly and is clean across blacklists.
 <img width="926" height="635" alt="image" src="https://github.com/user-attachments/assets/1a13010f-69f0-4ec5-8bbc-873b4315ae5b" />
 
 
-1.3 IP Ownership (IPinfo + VirusTotal)
+
+## 1.3 IP Ownership (IPinfo + VirusTotal)
+
 Field	Value
 IP	168.245.19.130
 Owner / ISP	SendGrid / Twilio
@@ -55,7 +59,7 @@ Matches major ESP infrastructure and shows no abuse detections.
 
 
 
-1.4 ESP Pattern Validation (SendGrid)
+## 1.4 ESP Pattern Validation (SendGrid)
 Evidence Type	Value
 DKIM d=	sendgrid.info ; sales-exec.com
 ASN/IP	168.245.19.130 / AS11377
@@ -68,7 +72,8 @@ All indicators align with SendGrid’s email marketing infrastructure.
 <img width="763" height="415" alt="image" src="https://github.com/user-attachments/assets/eef55158-01d3-41f9-9ecd-8eace5d124b0" />
 
 
-1.5 Protocol Interpretation
+
+## 1.5 Protocol Interpretation
 Field	Value
 Protocol	HTTP (SendGrid API) / SMTP (sales-exec.com)
 
@@ -79,7 +84,9 @@ Marketing campaign sent via API → automated, not manually crafted.
 
 <img width="945" height="148" alt="image" src="https://github.com/user-attachments/assets/1b93fe91-2169-4ec1-8906-83e5a46abb1d" />
 
-1.6 Email Authentication (SPF / DKIM / DMARC)
+
+
+## 1.6 Email Authentication (SPF / DKIM / DMARC)
 Mechanism	Result	Domain	Alignment
 SPF	Pass	em4053.sales-exec.com	✔ Aligned
 DKIM	Pass	sendgrid.info / sales-exec.com	✔ Aligned
@@ -91,7 +98,8 @@ Normal authentication results for an ESP-sent marketing email.
 <img width="975" height="320" alt="image" src="https://github.com/user-attachments/assets/8ac46111-17cc-45b2-8c0e-b6f55e5ffa06" />
 
 
-2️⃣ URL & DOMAIN IDENTITIES
+
+## URL & DOMAIN IDENTITIES
 2.1 Domain Identity Mapping
 Field	Value
 Return-Path	bounces+1366688-4b01-blackwellrbrt=aol.com@em4053.sales-exec.com
@@ -101,7 +109,8 @@ DKIM d=	sales-exec.com
 Received-From Domain	o1.ptr7709.sales-exec.com
 Final Identity Match	Yes
 
-Interpretation:
+
+## Interpretation:
 All domains align logically in the context of an ESP sending on behalf of a marketing customer.
 
 <img width="1420" height="833" alt="image" src="https://github.com/user-attachments/assets/d3db3832-0b67-4d91-8510-fcf399c9ea9a" />
@@ -113,7 +122,7 @@ All domains align logically in the context of an ESP sending on behalf of a mark
 
 
 
-3️⃣ CONTENT ANALYSIS
+## CONTENT ANALYSIS
 Indicator	Observation
 Urgency	None
 Sensitive Data Request	None
@@ -122,18 +131,21 @@ Grammar	Correct
 Brand Consistency	Matches TruGreen
 Content Risk	Low
 
-Interpretation:
+
+## Interpretation:
 Content fully matches expected promotional messaging.
 
 
 <img width="1489" height="605" alt="image" src="https://github.com/user-attachments/assets/0b1c8603-5dbf-4ae1-a225-790377d06e34" />
 
 
-4️⃣ THREAT CLASSIFICATION
+## THREAT CLASSIFICATION
 Classification	Reason
 Benign	All authentication aligned; content legitimate; IP/domain clean; reflects normal marketing behavior.
 
-5️⃣ FINAL DETERMINATION
+
+
+## FINAL DETERMINATION
 Final Verdict	Supporting Evidence
 Benign	SPF/DKIM/DMARC pass; SendGrid ownership confirmed; no malicious signals; content consistent with TruGreen.
 
@@ -149,11 +161,13 @@ Benign	SPF/DKIM/DMARC pass; SendGrid ownership confirmed; no malicious signals; 
 
 
 
-6️⃣ RECOMMENDED ACTION
+## RECOMMENDED ACTION
 
 Action: Add sender/domain to Safe List
 
-7️⃣ MACHINE LEARNING LABEL OUTPUT
+
+
+## MACHINE LEARNING LABEL OUTPUT
 
 → Save separately as:
 labels/email-01-label.md
@@ -163,7 +177,8 @@ Classification	Low Risk
 Subtype	Marketing
 Risk Level	Benign
 
-Key Indicators
+
+## Key Indicators
 
 No malware/credential harvest signals
 
@@ -171,9 +186,10 @@ SPF/DKIM/DMARC passed
 
 SendGrid (Twilio) confirmed as ESP
 
-IP reputation clean via IPinfo + VirusTotal
+IP reputation clean via  VirusTotal
 
-Authentication
+
+## Authentication
 
 SPF: Pass (Aligned)
 DKIM: Pass (Aligned)
@@ -183,7 +199,7 @@ DMARC: Pass (p=none)
 <img width="975" height="320" alt="image" src="https://github.com/user-attachments/assets/c931a5e6-002e-4dfa-b92b-72c35f73d236" />
 
 
-8️⃣ REFLECTION
+## REFLECTION
 
 What I learned:
 
