@@ -36,7 +36,7 @@ Hostname resolves correctly and is clean across blacklists.
 
 
 
-## 1.3 IP Ownership (IPinfo + VirusTotal)
+## 1.3 IP Ownership (VirusTotal)
 
 Field	Value
 IP	168.245.19.130
