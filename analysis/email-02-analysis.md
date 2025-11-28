@@ -120,5 +120,61 @@ This is consistent with **advance-fee fraud** and **419 scam patterns**.
 ## Extract Full Email Headers  
 
 
+## Authentication Results Overview (SPF / DKIM / DMARC)
 
+--
 
+#Email Authentication Summary (SPF • DKIM • DMARC)
+
+---
+
+# Authentication Findings
+
+| Mechanism | Result | Domain | Alignment | Interpretation |
+|-----------|--------|---------|-----------|----------------|
+| **SPF** | PASS | gmail.com | ❌ Not aligned | SPF passed because Gmail IP is authorized for gmail.com. However, the MAILFROM domain does NOT match the From: domain — red flag. |
+| **DKIM** | PASS | gmail.com | ❌ Not aligned | DKIM was signed by gmail.com, but the displayed From address **does not belong to the sender’s claimed identity**. Red flag: signing domain is generic. |
+| **DMARC** | PASS (p=none) | gmail.com | ❌ Not aligned | DMARC passes because Gmail’s domain authenticates itself — but alignment still fails. This means **Gmail authenticated Gmail**, not the sender’s identity. |
+
+---
+
+## Interpretation 
+
+### **SPF Pass — but NOT a sign of legitimacy**
+- Gmail allows its servers to send mail for gmail.com  
+- But this email claims to be a “Financial Services, UK” entity  
+- That identity **IS NOT** tied to gmail.com  
+- Therefore SPF → **meaningless here**  
+
+**Red Flag:** Attackers often use free email providers so SPF passes even during fraud.
+
+---
+
+### **DKIM Pass — but signed by Gmail, not the claimed sender**
+- DKIM signature is valid  
+- But signed by **gmail.com**, not by any financial institution domain  
+- Message was not altered — but:
+  - Sender identity is **not validated**
+  - Anyone can create a Gmail account and sign mail with Gmail’s DKIM
+
+**Red Flag:** DKIM pass ≠ proof of legitimacy when the domain is generic.
+
+---
+
+### **DMARC Pass — but only because Gmail authenticated itself**
+- DMARC passes under **p=none**, which requires no enforcement  
+- Alignment fails because:
+  - From: is not a financial institution  
+  - MAILFROM: gmail.com  
+  - DKIM: gmail.com  
+
+So DMARC passes technically **but confirms NOTHING about legitimacy**.
+
+**Red Flag:** DMARC “pass” with misalignment is one of the most common phishing indicators.
+
+---
+
+## 📸 Screenshot Placeholders
+Add screenshots here once collected.
+
+### SPF Screenshot
