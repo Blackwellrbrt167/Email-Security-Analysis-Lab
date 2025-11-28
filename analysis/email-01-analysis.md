@@ -14,7 +14,7 @@ IP belongs to SendGrid, not the corporate domain.
 
 HTTP indicates API-based sending (automation).
 
-<img width="975" height="156" alt="image" src="https://github.com/user-attachments/assets/0885f65f-1efa-48cc-84f4-f1a0ebd2ce48" />
+<img width="429" height="75" alt="email-01-bottom-received " src="https://github.com/user-attachments/assets/fc78932f-0224-49b2-8728-6f1f909b8dd4" />
 
 
 ## 1.2 Hostname Ownership (MXToolbox Lookup)
