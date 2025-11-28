@@ -116,3 +116,9 @@ This is consistent with **advance-fee fraud** and **419 scam patterns**.
 - Mentions large sums of money ($2.55M), a hallmark of advance-fee scams.
 
 ---
+
+## Extract Full Email Headers  
+
+
+
+
