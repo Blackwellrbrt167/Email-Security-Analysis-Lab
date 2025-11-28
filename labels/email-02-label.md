@@ -5,7 +5,7 @@ Risk Level: High
 
 ## Key Indicators
 
-DMARC failed (no alignment)
+DMARC failed (no alignment)**
 
 DKIM not aligned with the From: domain
 
@@ -22,8 +22,9 @@ Claims of large financial compensation
 No verifiable organization, identifiers, or professional branding
 
 
-# Authentication Summary
-SPF
+## Authentication Summary
+
+**SPF**
 
 Result: Pass
 
@@ -33,13 +34,13 @@ SPF Domain: protonmail.com
 
 Notes: Message routed through Gmail; authorized server but sender identity not validated
 
-DKIM
+**DKIM**
 
 Result: Fail
 
 Reason: No DKIM signature aligned with the From: address
 
-DMARC
+**DMARC**
 
 Result: Fail
 
