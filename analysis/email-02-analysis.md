@@ -35,6 +35,9 @@
 
 ## Full Email Body Review  
 
+<img width="649" height="709" alt="email-02-email-body" src="https://github.com/user-attachments/assets/ef057a0f-a4bd-44e3-b6e5-d489bf801cf4" />
+
+
 ### Red Flags Identified in the Email Body
 
 #### **Urgency (Pressure to Act Quickly)**
@@ -113,12 +116,14 @@ This is consistent with **advance-fee fraud** and **419 scam patterns**.
 
 ## Extract Full Email Headers  
 
+<img width="828" height="832" alt="email-02-header-full" src="https://github.com/user-attachments/assets/ac6a66a1-8679-4c7c-a940-441528bf9b50" />
 
 ## Authentication Results Overview (SPF / DKIM / DMARC)
 
 --
 
-#Email Authentication Summary (SPF • DKIM • DMARC)
+<img width="880" height="202" alt="email-02-authentication results" src="https://github.com/user-attachments/assets/6d2eb9ba-9613-4e78-a788-0dd1b0987820" />
+
 
 ---
 
