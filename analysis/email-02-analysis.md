@@ -11,16 +11,10 @@
 - **Email Provider:** Gmail  
 - **Email Folder Source:** Spam  
 
----
+
+<img width="893" height="69" alt="email-02-bottom-received" src="https://github.com/user-attachments/assets/ccdeeb1e-50fb-4c95-8775-fef5791eadb1" />
 
 
-```text
-From: john lee <sandraleejohn591@gmail.com>  
-Date: Wed, 19 Nov 2025 11:47:49 +0100  
-X-Gm-Features: AWmQ_bmDCXCJoerehwPHmnORUO1ohu3pJkWPvqaQdjEVZx_aPRvvGeiTWJQsO1Qgg  
-Message-Id: <CANM7GEeMz93JUmdMBDR3YYat6yst5Wa0763xRmjk=PutVxpMVW@mail.gmail.com>  
-Subject: reference number: SFSA/UP2950/8PUK  
-```
 
 ## Initial Risk Assessment
 
