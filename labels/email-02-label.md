@@ -5,21 +5,21 @@ Risk Level: High
 
 ## Key Indicators
 
-DMARC failed (no alignment)**
+- DMARC failed (no alignment)**
 
-DKIM not aligned with the From: domain
+- DKIM not aligned with the From: domain
 
-SPF passed but not aligned
+- SPF passed but not aligned
 
-“From:” domain (ProtonMail) does not match Gmail sending infrastructure
+- “From:” domain (ProtonMail) does not match Gmail sending infrastructure
 
-Free email provider used for impersonation
+- Free email provider used for impersonation
 
-Multiple linguistic and formatting red flags
+- Multiple linguistic and formatting red flags
 
-Claims of large financial compensation
+- Claims of large financial compensation
 
-No verifiable organization, identifiers, or professional branding
+- No verifiable organization, identifiers, or professional branding
 
 
 ## Authentication Summary
