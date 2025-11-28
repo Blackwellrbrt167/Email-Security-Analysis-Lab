@@ -178,3 +178,42 @@ So DMARC passes technically **but confirms NOTHING about legitimacy**.
 Add screenshots here once collected.
 
 ### SPF Screenshot
+
+
+## Full Header Forensics (Domain Chain Analysis)
+
+# Interpretation
+
+Does the sending chain make sense?	Yes — Gmail’s internal hop sequence is normal.
+
+Any suspicious jump from unrelated server?	Suspicious sender identity, not the hops.
+
+Red flags:
+• Gmail account impersonating a UK financial authority
+• No official organizational domain
+• No DKIM alignment for any UK gov/finance domain
+• Body content matches common scam patterns
+
+Is the Received: order inconsistent?	No — Gmail hops appear in the correct internal order.
+Does the source IP belong to the claimed domain?	Yes — It belongs to Gmail, not the impersonated UK authority.
+
+### Notes About Gmail’s Internal Hops
+
+Gmail uses multiple relay layers during message processing:
+
+IPv6 handoff
+
+Google Frontend (internal routing)
+
+Google Mail Transfer Agent (MTA)
+
+Anti-spam and anti-abuse scanning
+
+Internal routers and delivery relays
+
+These will ALWAYS appear and are not indicators of malicious behavior.
+
+Overall Forensic Verdict
+
+Header chain is legitimate Gmail infrastructure.
+The sender identity is fraudulent — not the email route.
