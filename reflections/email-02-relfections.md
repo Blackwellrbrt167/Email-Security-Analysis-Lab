@@ -1,3 +1,4 @@
+## Email-02 Analysis — Learning Reflection
 
 This analysis gave me a clearer glimpse into what a malicious email can look like, as well as what a legitimate Gmail-sent email header normally contains. I was confused at first because the chain of hops looked inconsistent and all over the place. Through research, I learned that this behavior is completely normal for emails sent from a Gmail account, which uses multiple internal relay hops.
 
