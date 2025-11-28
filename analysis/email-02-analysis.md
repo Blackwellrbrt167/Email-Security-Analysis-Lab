@@ -220,3 +220,41 @@ The sender identity is fraudulent — not the email route.
 
 # VirusTotal Reputation Checks
 Purpose: Validate whether the sending IP/domain/URL shows malicious behavior.
+
+## Interpretation
+
+No security vendors flagged this URL as malicious.
+-	VT clean does not change the risk
+-	Gmail infrastructure cannot be used to validate legitimacy
+-	Gmail is frequently used by scammers for free
+
+# WHOIS / Domain Age Analysis
+
+## Interpretation
+
+First thing I notice when utilizing domaintools was that the listed ASN was not identified in the header per my analysis.  But this is normal given Gmail hides ASN inside internal routing and IPv6 handoffs, so the ASN will not be directly exposed.  Gmail’s ASN is AS15169.  I must note again that the suspicious comes from the following fact:
+
+-	Financial authority claim 
+-	Sender uses Gmail 
+-	Not an official gov.uk domain 
+
+•	Domain creation date: Mar 30, 2000 
+•	Registrar: Google LLC 
+•	Country / privacy info: US 
+•	Suspicious patterns: none 
+
+
+# Link & Attachment Analysis: No links were provided in this email 
+
+# Final Verdict
+
+This email is clearly malicious.
+
+## Indicators include:
+•	Mismatched identity (claiming UK financial authority but sent via Gmail)
+•	DKIM alignment fails
+•	DMARC fails due to alignment
+•	Numerous grammatical and structural red flags
+•	The sender email and content strongly resemble known advance-fee fraud scams
+
+
