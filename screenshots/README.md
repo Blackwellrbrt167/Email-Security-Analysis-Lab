@@ -49,7 +49,7 @@ email-XX-[description].png
 
 Example:
 
-email-01-header-full.png
+screenshots-01-Full-Header.png
 
 email-01-authentication-results.png
 
