@@ -16,9 +16,6 @@ This section builds the foundation for the entire investigation.
 
 ---
 
-### 📸 Screenshot — Basic Metadata
-
-*(Screenshot your email client showing the sender, subject, and timestamp.)*
 
 ```text
 From: john lee <sandraleejohn591@gmail.com>  
