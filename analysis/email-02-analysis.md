@@ -108,7 +108,7 @@ This is consistent with **advance-fee fraud** and **419 scam patterns**.
 
 ---
 
-### **Your Notes (Analyst Observations)**
+### **Notes**
 - The message uses emotionally manipulative wording regarding hardship and funds.  
 - Claims of government involvement without evidence.  
 - Multiple grammar and structural issues typical of mass scam emails.  
