@@ -63,7 +63,7 @@ This makes files easy to read and helps recruiters understand what each screensh
 
 Inside analysis files, link images like this:
 
-![Full Header](../screenshots/email-01/email-01-header-full.png)
+screenshots-01-Full-Header.png
 ![Authentication Results](../screenshots/email-01/email-01-authentication-results.png)
 ![VirusTotal IP Reputation](../screenshots/email-01/email-01-virustotal-ip.png)
 
