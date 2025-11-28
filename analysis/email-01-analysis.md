@@ -90,7 +90,8 @@ DMARC	Pass	p=none	⚠ Not aligned (monitor mode)
 Interpretation:
 Normal authentication results for an ESP-sent marketing email.
 
-<img width="975" height="320" alt="image" src="https://github.com/user-attachments/assets/8ac46111-17cc-45b2-8c0e-b6f55e5ffa06" />
+<img width="798" height="201" alt="email-01-authentication-results" src="https://github.com/user-attachments/assets/8b91be24-3f45-4647-ad65-9ac692ad81f8" />
+
 
 
 
