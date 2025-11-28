@@ -217,3 +217,6 @@ Overall Forensic Verdict
 
 Header chain is legitimate Gmail infrastructure.
 The sender identity is fraudulent — not the email route.
+
+# VirusTotal Reputation Checks
+Purpose: Validate whether the sending IP/domain/URL shows malicious behavior.
