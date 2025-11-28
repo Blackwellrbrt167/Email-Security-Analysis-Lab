@@ -28,11 +28,8 @@ Blacklist Status	Clean
 Interpretation:
 Hostname resolves correctly and is clean across blacklists.
 
-<img width="692" height="133" alt="image" src="https://github.com/user-attachments/assets/b22d679f-4c91-4a1b-a726-82cce85adfc6" />
+<img width="736" height="506" alt="email-01-mxtoolbox-dns" src="https://github.com/user-attachments/assets/17db6eba-c794-4165-aa52-6529c2b0fc3a" />
 
-
-
-<img width="926" height="635" alt="image" src="https://github.com/user-attachments/assets/1a13010f-69f0-4ec5-8bbc-873b4315ae5b" />
 
 
 
@@ -64,7 +61,8 @@ Pattern Match	Yes
 Interpretation:
 All indicators align with SendGrid’s email marketing infrastructure.
 
-<img width="763" height="415" alt="image" src="https://github.com/user-attachments/assets/eef55158-01d3-41f9-9ecd-8eace5d124b0" />
+<img width="795" height="618" alt="email-01-mxtoolbox-header" src="https://github.com/user-attachments/assets/3c19e309-89ff-417a-ad21-5897700759a9" />
+
 
 
 
@@ -75,9 +73,15 @@ Protocol	HTTP (SendGrid API) / SMTP (sales-exec.com)
 Interpretation:
 Marketing campaign sent via API → automated, not manually crafted.
 
-<img width="820" height="159" alt="image" src="https://github.com/user-attachments/assets/6f87505b-584b-42f4-956c-103dc46a7b45" />
 
-<img width="945" height="148" alt="image" src="https://github.com/user-attachments/assets/1b93fe91-2169-4ec1-8906-83e5a46abb1d" />
+SendGrid API hop 
+
+<img width="790" height="618" alt="email-01-bottom-received" src="https://github.com/user-attachments/assets/a6a3ce1e-a41f-45b9-8ba6-9a4c9e8127af" />
+
+SMTP relay hop
+
+<img width="866" height="834" alt="email-01-header-full" src="https://github.com/user-attachments/assets/2daa5309-e699-441b-a581-6447726f682e" />
+
 
 
 
@@ -90,7 +94,8 @@ DMARC	Pass	p=none	⚠ Not aligned (monitor mode)
 Interpretation:
 Normal authentication results for an ESP-sent marketing email.
 
-<img width="798" height="201" alt="email-01-authentication-results" src="https://github.com/user-attachments/assets/8b91be24-3f45-4647-ad65-9ac692ad81f8" />
+<img width="798" height="201" alt="email-01-authentication-results" src="https://github.com/user-attachments/assets/ce61271e-1ca8-4ea3-bb5c-8626a62164bb" />
+
 
 
 
