@@ -1,7 +1,4 @@
-# Basic Metadata (Bottom-Most Received)
-
-**Purpose:** Capture the immediate identifying information about the email before deep analysis.  
-This section builds the foundation for the entire investigation.
+# Basic Metadata 
 
 ---
 
