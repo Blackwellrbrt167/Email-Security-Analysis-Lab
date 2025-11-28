@@ -48,13 +48,8 @@ VirusTotal Reputation	0/90 flagged
 Interpretation:
 Matches major ESP infrastructure and shows no abuse detections.
 
-<img width="975" height="590" alt="image" src="https://github.com/user-attachments/assets/4464ef90-621d-4c7a-b94e-8d6c13f59388" />
+<img width="782" height="470" alt="email-01-virustotal-ip" src="https://github.com/user-attachments/assets/5318f109-6328-4253-b99c-67b7f38639bc" />
 
-<img width="569" height="657" alt="image" src="https://github.com/user-attachments/assets/ea11d4c7-7532-456c-94f5-f929adb014b7" />
-
-<img width="635" height="752" alt="image" src="https://github.com/user-attachments/assets/a2874884-df97-4aca-b282-76b47b8ff874" />
-
-<img width="774" height="470" alt="image" src="https://github.com/user-attachments/assets/4f053cb0-d1c0-4f78-9470-14a5c5fc65e7" />
 
 
 
