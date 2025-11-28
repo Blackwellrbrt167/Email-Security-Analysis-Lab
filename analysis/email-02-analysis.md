@@ -180,9 +180,9 @@ Add screenshots here once collected.
 ### SPF Screenshot
 
 
-## Full Header Forensics (Domain Chain Analysis)
+# Full Header Forensics (Domain Chain Analysis)
 
-# Interpretation
+## Interpretation
 
 Does the sending chain make sense?	Yes — Gmail’s internal hop sequence is normal.
 
