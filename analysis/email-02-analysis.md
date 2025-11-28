@@ -24,8 +24,6 @@ Subject: reference number: SFSA/UP2950/8PUK
 
 ## Initial Risk Assessment
 
-### **Questions to Answer**
-
 - **Does the email try to get me to click a link, open an attachment, or sign in?**  
   No. There were *no links, attachments, or sign-in prompts* in the email body.
 
