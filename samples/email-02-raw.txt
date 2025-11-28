@@ -1,1 +1,122 @@
+Return-Path: <sandraleejohn591@gmail.com>
+X-Original-To: Robert.blackwell3@protonmail.com
+Delivered-To: robert.blackwell3@protonmail.com
+Authentication-Results: mail.protonmail.ch; dkim=pass (Good 2048 bit
+    rsa-sha256 signature) header.d=gmail.com header.a=rsa-sha256
+Authentication-Results: mail.protonmail.ch; dmarc=pass (p=none dis=none)
+ header.from=gmail.com
+Authentication-Results: mail.protonmail.ch; spf=pass smtp.mailfrom=gmail.com
+Authentication-Results: mail.protonmail.ch; arc=none smtp.remote-ip=209.85.128.49
+Authentication-Results: mail.protonmail.ch; dkim=pass (2048-bit key) header.d=gmail.com
+ header.i=@gmail.com header.b="bP57fEnf"
+Received: from mail-wm1-f49.google.com (mail-wm1-f49.google.com [209.85.128.49]) (using
+ TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+  key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256) (No
+ client certificate requested) by mailin055.protonmail.ch (Postfix) with ESMTPS id
+ 4dBJ9D0DDRz3R for <Robert.blackwell3@protonmail.com>; Wed, 19 Nov 2025 10:47:59 +0000
+ (UTC)
+Received: by mail-wm1-f49.google.com with SMTP id 5b1f17b1804b1-477563e28a3so5659455e9.1
+        for <Robert.blackwell3@protonmail.com>; Wed, 19 Nov 2025 02:47:59 -0800 (PST)
+Dkim-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1763549279; x=1764154079; darn=protonmail.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=zIvn7pTo2w/MuSHbfav0DT9ggVSWSl5rDgPLtV82AyU=;
+        b=bP57fEnf9tQPRhD6ra+nAW0WyVJ2CQeOjEqcplXITzgJmlokEq3Tt2KovbdkBOw8zg
+         wqxclNKCXtk/2MWBECF6GpWGllLfwDmMqZfDHznxc5mekoGJYJmiuRLq0CWRxfRT0t8J
+         NHaVgBbdpPK0DRC2/ZorgKSjZ1pA9n1GShcRvRRy6pooURUb5hrU/oVo6DJ3RuHX3YmC
+         FsH9y6K+I7/j3jF45VjUnHhXZd0fN385EDqQP+TWTxNiJLQ6yyz7l3n4AAQ+DpJTwbz2
+         4eNhEUktQKiGr8YNl46CmVizsZgVQmuONgp7t6XJYJ3Fga/GuvQg7Fq+bZCvyjLwzKAr
+         gH8w==
+X-Google-Dkim-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1763549279; x=1764154079;
+        h=to:subject:message-id:date:from:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=zIvn7pTo2w/MuSHbfav0DT9ggVSWSl5rDgPLtV82AyU=;
+        b=gnO0K+46ArTbYXDqe/hE9W3lbV9BsJXvDMc9GPCrj0Aey3JboxZkSpCnMGNCLCYJBU
+         87oSshPZ5ibHCuJK11cFn3DlVUA3HYh6wU+bmsv5TZtDT16q1z8z8oDFAf4pYiBU3nRe
+         rObwcY1STZfcZ+i/7rs+u2wkTifcW78dQlPK7/uWbSkz0B4tlSCUPzFqlrKhBDB63j7w
+         YHDys7upGkmrHqSel4mxwnE1izFaJHxAxLn+Ms/YG6rPK/WcFvUZ6S8CFDekRkz5ORnw
+         sl4TTe4ttaUFdUcgWtVzjd3ln79j7jr8G/fmGiiE3rfiYe0WnBHJPV9cpCvfhVreMxPT
+         3ZLw==
+X-Forwarded-Encrypted: i=1;
+ AJvYcCXntFAfpPDOEIgRP4PTD6BEX6vN4Kacmw8k9o+Zm4Ywh8D86CBG9b4e67/69XbuEBDu9RcM8o40zHT0kOuO/yT7WA==@protonmail.com
+X-Gm-Message-State: AOJu0YySwKnY5PWgFtXz06vtPDDpX6Ie6g9ikkSMRd1U6ZpXANRpjMLf
+ 9REKzlfagQahMN2i228cSMIFBSZKQO6zEa4E7cOfmorQUVWlRiuw6MnKCcKSlCIOnbu0j0P+1dC
+ JU3lUmd+7yP3NmKKxxaAXGrVfNkjFJcs=
+X-Gm-Gg: ASbGncuLe2283HLDVUPIUKBp1ScAKxl9rxcN856vYoEBsG332j0V6CKRE/eEKyba6gs
+ F440kxmGkGSaYr6gVYuk2phexEjs+p/S+mDOU/YGHSUsXY+rThtd8CKw6L6oN9FrSo5jlFIreW8
+ r2vSNRQM4HJy/0X6GknYFt3CQNmPw7DaYGaoOJ20YfV0DX2mTSsmGSY8uFOmI50BZSp2LcCNrtz
+ Ac9TK7GXQMsUImIzeTjqsm6oT1E1q6o1jzR1V9RSA9FrLqvVvlMtTYkYtRJa3KI96zCTh+hmg/s NMRHlq0k
+X-Google-Smtp-Source: AGHT+IE74UapicREaDfI9W77PIVWFi4JKMcOfAvGu5oheAZLF3NgYBtpsWmggU2fwN/HBr4bKdljvErv1iNlNLY/KkI=
+X-Received: by 2002:a05:600c:1c87:b0:477:a1bb:c58e with SMTP id
+ 5b1f17b1804b1-477b18c1aecmr22954715e9.7.1763549278638; Wed, 19 Nov 2025 02:47:58 -0800
+ (PST)
+Mime-Version: 1.0
+From: john lee <sandraleejohn591@gmail.com>
+Date: Wed, 19 Nov 2025 11:47:49 +0100
+X-Gm-Features: AWmQ_bmDcXJoerehwPHmnORUO1ohu3pJkWPvqaQdjEVZx_aPRvvGeiTWJQs01Qg
+Message-Id: <CANM7GEeMz93JUndMBDR3YYat6yst5WaO763xRmjk=PutVxpMVw@mail.gmail.com>
+Subject: reference number: SFSA/UP2950/8PUK
+To: undisclosed-recipients:;
+Content-Type: text/html
+X-Pm-Spam: 0yezJI6YSpyJec91ztFGcjIxoJyLCvXBZcQniisnOUQWR5DQUGV9RRVUfO9VNVRfd9OT
+ UiVkROslziwSXkQZFNfRViDANOslxzJCL2Yy9ogZTzC4MNgTzs0lIkILR1fSUH0lUTVkEbpjICMx4w
+ iXSJEtRT9VWJxUQCR6I0wWydjFLLJCENl0S1XBZlETEV0FXIpjbuATLVMs0RLIkfU1SVFkMfRUSURi
+ YstOlxC4MXwSiFJlRURB1xfSUWU5RRJlPF9VTkTfRlHREiVQSOslwsIjLnIhNRybmlWxYZpWv14GaT
+ ObFRdYXh21ZawWut92YlIs0ZSIkNUVRQlUMSZ0X0Ti0swOlzCJLY5WksFmcWZqVhub2xTkNWF20tdW
+ XWYslNvLmdSJbLJCGFVkUUTJF9STFMVBRWIS6dFzWCLIJ1MVEF01XUN1BiU0RlOwswiXSUE9TU91PN
+ 9lR0TF5I6WSdzFWLJCNJd0UFRG99NUkU01XQ9VIEFURVRiIswOliSwXUNkWJ9FRlTN9BJU1f0VSSID
+ iwslOCLyIkuMDuDUOMIT45QjLGIpxRlc3pCBZbBi3t5CbWYslBpc3u2UabVm0s0lIlIDJRfVkfU5SV
+ FkMJRUSFVflVSQ0GElVSVUEMJ0X0TLNQiRUwlsOLICyukDMDOuUI4MT5jQLIxGplR3cCZpBBzbi0S1
+ YcVnzkVGdmLvJRlbmlHNZbRmlv5icmcicwiXSWkNUR9FJW9lTUQJxlURESV9WUJEMMJ0X0TLNQiRUw
+ lsOLICyukDMDOuUI4MT5jQLIxGplR3cCZpBBibizC5bY92yz5SZWZk5JzZXy29YZ5Sji02bSXiwBGU
+ 1F0hXT9EfO9kTSR6IBdWzTCJLUZEfTFEUyU6I0wWyiSwXV5UDJFETUTEV1PX0ZkVTIpjb04iMSXiw5
+ EVUDVNSX10PZVkTjIbp4xMyiSwXWZEFM9lU1TTR9NQVF05TWIS6dFzWSfiwNvc2imUcOEjyzJCL2Yy
+ 9QiZWyjEOLZj9zJCLic6IJheyp3RYb42iwJiOGazlluaGsyIZIJn1iUGbiO2IY3Nz3mIYNIjwwQWMz
+ YlZJiZDxTcYZgTizJCLmckloiIjxjkNZEGwmFjNzNklMxNG3WMMNYD44YWYnI91
+X-Pm-Origin: external
+X-Pm-Transfer-Encryption: TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+X-Pm-Content-Encryption: on-delivery
+X-Pm-Spamscore: 12
+X-Pm-Spam-Action: phishing
+
+
+-----BEGIN PGP MESSAGE-----
+Version: ProtonMail
+
+wV4DYk1AjDy4om0SAQdAFEyfRTozCjYLediWt0oSmnf3kSczwukbfHX1bZPn
+qjswcyRDajXejTTjSNq3n+OFIiUhmgZUXeZ8I3cjclm+xOtQqRnN2u8GpuZg
+ehUaL+vA0sR5ASGBxbysub86EZ4ZbGTjC/oO81PoZ7ajdn7Si1KgVOG8U3kg
+OxrGwgRkgWYfuWlbdQQo6+r4hQA0ft5TW2B6ixAPh0BmZnr9RsnN4AgdLmrV
+UqKonkUiJtQ8/b2NMkuyFdb8sKu2aicjAGK76/KTGIv5/bpGPa85apiLS4at
+tqHzUVD2BlZFMjnUee+6IILin01i72JQ7nz7WFYamKwnlRbLM608noPDUxhV
+9OdyjLm/Oi5CuJsyVheLN8YuSb3KAAZOnKzxgJnX1SplCpz6gww4p7otzzDr
+8k6ZnxISyROdrVHjj+Zl8fbvqi7sYt3DSCuv/tA0MW/ECkbrLqvQ6syLAZwz
+tWz5IiAr6gq9h8I8caflG15Odtovdaz4HG2dbyLJj5/0852Yge6RdFq0H7eq
+RE7KOq9fDALLK8SRGEMeOGiX0Rs+qtCSbIvedb2pBX1wmjBPYJNLQXgGkxAA
+zEchJ3SCuWW9M3KWlWAGJGMr0fET1A7J9f+UE8z5Fg6XYYtQ8SaE34vwEzNt
+NhLSGEaFamxa9ucXYwvFmT6vfYE981N4aBLvGHcptu5yqLb33T596QD5/8BE
+w6Y0rja2356FIm4CAarAmQtdaWtABInV8hQJgKmUvo8EM3T4sybJYNZO11QA
+b5/1bhlTLPkUjDyvFHedxxko9xkj5oMw69ZdyoPTGVxMaLcnl75ZHUOUiaF7
+JWBdDn/1jK82tM8LTc4fQTPfG+U6z5GTbHTSfPyowFeb3k3hxuK82VeTUOW4
+p9Bg+WMDdlnNUr+F/ufvY5uAAv+i17wp5nPMOvkESEVitf8mgEBinnJ0OmHh
+1VCzH5SIO1m2PQBOFzpJrPkOTHSpwVPobDzV+I4hgUH2Lg5+ab9vY1OGljPj
+A5X5NZDKefAgH4FQBcfYbVe9Cf7ay79isBRaXNDKfZPk4mPbO5+tw3NTeKMn
+P4pAHoOj9RrfmY7ukoHcw8VXQozw1CX6QytKt5I2l8Q2uh5X78DNw5YVee7b
+jqbQwJ/y3wjHgZRKY4yU2bj4JpT5+7621UWDHlGE425TQBYF4Oj8J5ag09Xa
+qjU4h6MHHsmZPFKHZ84kk4Sr2C0u7PqtdfjV87Ss3YGSv1YtYv60+TEN3qVY
+4sMOumlbBcxkp42UrBPLqSr6RssHCkzD7tREgvYwZ2AqOqHSk/8kyUTaRIuK
+Qasm71HhCM8HELEjLHTrrUQQIWZ8TtFnqQ/vLH0wmAmu9uxlLyy+PoLo5C73
+iqMpLLCCOzrfca6VXLKCOklTZrt5IhfWRrTEutv63kMMxIf2FUa8z/aSaM3H
+q0HxmGYFNLJ/6MnnnpMKmPRfH+nNDEMCuFQNl+HTr1KHmrxBtfdyU2b1sCFY
+pKwedbPz1NtPif3fCJ/zuBAdZqE0s3TECiSOAGBisrzACJpNC8bTzPI/01ud
+k+QmW+lx+3F8SVtnPH3y2c5vUlKkWspyQSZlFZXoildi+q/QiDZ9lySzKNkq
+zYMA9qVmv9TkC1EphQ7vZVYVsx8W/ROxnDKa/2Tn9Tzxhl72tx4w46eEltjZ
+8rcqkrUMlog5OttFGftr7+LO3ua92KugsNvg+6BWIiNhbLaeTt4KniwuCQna
+lbMYiLv0+cQMCGFUB038AaC73wzm4So54pI+XXjd8myKJo9/AcI7tYMmZz7p
+pT74/83PoW6RSrHVjiPfMr41jeCQGUbFqhTG36ldh9n/dfY64UY6tu7U//+o
+uTwv7y3QiUokyg6N5AzCPZb9N7A+dPndKVCFZWdNhPiL08IkpZcpCSg=
+=r3G5
+-----END PGP MESSAGE-----
 
