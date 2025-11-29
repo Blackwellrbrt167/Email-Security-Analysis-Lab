@@ -147,6 +147,8 @@ This is consistent with **advance-fee fraud** and **419 scam patterns**.
 
 **Red Flag:** Attackers often use free email providers so SPF passes even during fraud.
 
+<img width="780" height="124" alt="email-02-spf results" src="https://github.com/user-attachments/assets/64efb522-9385-43c2-a96e-6b568ed77713" />
+
 ---
 
 ### **DKIM Pass — but signed by Gmail, not the claimed sender**
@@ -157,6 +159,8 @@ This is consistent with **advance-fee fraud** and **419 scam patterns**.
   - Anyone can create a Gmail account and sign mail with Gmail’s DKIM
 
 **Red Flag:** DKIM pass ≠ proof of legitimacy when the domain is generic.
+
+<img width="504" height="142" alt="email-02-dkim signature results" src="https://github.com/user-attachments/assets/bff40adf-e398-460b-a3b6-b77619c3fd97" />
 
 ---
 
@@ -169,7 +173,10 @@ This is consistent with **advance-fee fraud** and **419 scam patterns**.
 
 So DMARC passes technically **but confirms NOTHING about legitimacy**.
 
+
 **Red Flag:** DMARC “pass” with misalignment is one of the most common phishing indicators.
+
+<img width="726" height="123" alt="email-02-dmarc results" src="https://github.com/user-attachments/assets/e2e8f53f-5cb2-49f4-a936-1a221ccec8da" />
 
 ---
 
