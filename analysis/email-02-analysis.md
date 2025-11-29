@@ -248,17 +248,28 @@ First thing I notice when utilizing domaintools was that the listed ASN was not 
 •	Suspicious patterns: none 
 
 
-# Link & Attachment Analysis: No links were provided in this email 
+# Final Rating: Malicious
 
-# Final Verdict
+Why This Rating Was Assigned
 
-This email is clearly malicious.
+This email exhibits multiple high-risk indicators consistent with advance-fee fraud.
 
-## Indicators include:
-•	Mismatched identity (claiming UK financial authority but sent via Gmail)
-•	DKIM alignment fails
-•	DMARC fails due to alignment
-•	Numerous grammatical and structural red flags
-•	The sender email and content strongly resemble known advance-fee fraud scams
+**Key points include**:
 
+- Identity Mismatch: Sender claims to be a UK financial authority but uses a personal Gmail account, which is inherently untrustworthy for official correspondence.
+
+- Authentication Failures:
+
+- DKIM does not align
+
+- DMARC fails due to alignment
+
+- SPF passes only because Gmail is authorized to send for gmail.com, not because the sender is legitimate
+
+ - Linguistic Red Flags: Numerous grammatical, structural, and stylistic errors typical of scam emails.
+
+ - Content Indicators: Financial claims, compensation promises, and narrative patterns consistent with known advance-fee scams.
+
+
+Overall, the sender’s identity cannot be validated, the authentication mechanisms do not support legitimacy, and the content strongly aligns with fraud tactics.
 
