@@ -180,12 +180,6 @@ So DMARC passes technically **but confirms NOTHING about legitimacy**.
 
 ---
 
-## 📸 Screenshot Placeholders
-Add screenshots here once collected.
-
-### SPF Screenshot
-
-
 # Full Header Forensics (Domain Chain Analysis)
 
 ## Interpretation
