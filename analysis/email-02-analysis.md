@@ -231,6 +231,9 @@ No security vendors flagged this URL as malicious.
 
 # WHOIS / Domain Age Analysis
 
+<img width="903" height="604" alt="email-02-whois" src="https://github.com/user-attachments/assets/677643d3-1c53-42fa-a705-b99ffc12dadf" />
+
+
 ## Interpretation
 
 First thing I notice when utilizing domaintools was that the listed ASN was not identified in the header per my analysis.  But this is normal given Gmail hides ASN inside internal routing and IPv6 handoffs, so the ASN will not be directly exposed.  Gmail’s ASN is AS15169.  I must note again that the suspicious comes from the following fact:
