@@ -219,7 +219,8 @@ Header chain is legitimate Gmail infrastructure.
 The sender identity is fraudulent — not the email route.
 
 # VirusTotal Reputation Checks
-Purpose: Validate whether the sending IP/domain/URL shows malicious behavior.
+
+<img width="688" height="404" alt="email-02-virustotal-ip" src="https://github.com/user-attachments/assets/bf84febe-e73f-4588-8884-0c620a23ae4b" />
 
 ## Interpretation
 
